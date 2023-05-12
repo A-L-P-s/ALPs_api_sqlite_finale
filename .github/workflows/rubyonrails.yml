@@ -21,7 +21,7 @@ jobs:
         env:
           POSTGRES_DB: ALPs_api_test
           POSTGRES_USER: ALPs_api
-          POSTGRES_PASSWORD: password
+          POSTGRES_PASSWORD: <%= ENV["ALPS_API_DATABASE_PASSWORD"] %>
     env:
       RAILS_ENV: test
       DATABASE_URL: "postgres://rails:password@localhost:5432/rails_test"
