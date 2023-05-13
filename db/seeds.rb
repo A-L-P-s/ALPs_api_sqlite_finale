@@ -31,43 +31,52 @@ User.create(id: 55, name: "Deniz", preferred_lang: "Turkish")
 
 Challenge.create(id: 102, user_id: 55, language: "Turkish", verb: "(e/a) gitmek", eng_verb: "to go", image_url: "https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80", image_alt_text: "Plane flying")
 #correct sentence:
-Sentence.create(id: 300, challenge_id: 102, grammar_point: "gelecek zaman", eng_grammar_point: "simple future", user_sent: "Yarın annem beni havalimanına bırakmak için araba kullanacak.", ai_sent: "Yarın annem beni havalimanına bırakmak için araba kullanacak.")
+Sentence.create(id: 300, challenge_id: 102, grammar_point: "gelecek zaman (-ecek)", eng_grammar_point: "future tense", user_sent: "Yarın annem beni havalimanına bırakmak için araba kullanacak.", ai_sent: "Yarın annem beni havalimanına bırakmak için araba kullanacak.")
 #incorrect sentence:
-Sentence.create(id: 301, challenge_id: 102, grammar_point: "geçmiş zaman", eng_grammar_point: "past simple", user_sent: "Dün havalimana gittik ama arkadaşım uçak gelmedi.", ai_sent: "Dün havalimanına gittik, ancak arkadaşımızın uçağı gelmedi.")
+Sentence.create(id: 301, challenge_id: 102, grammar_point: "olumsuz geçmiş zaman (-me/-ma + di/-tı)", eng_grammar_point: "negative past tense", user_sent: "Dün havalimana gittik ama arkadaşım uçak gelmedi.", ai_sent: "Dün havalimanına gittik, ancak arkadaşımızın uçağı gelmedi.")
 
 
-Challenge.create(id: 103, user_id: 55, language: "Turkish", verb: "(i) istemek", eng_verb: "to understand", image_url: "https://plus.unsplash.com/premium_photo-1674831140622-93f54b70bfbf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80", image_alt_text: "Elephant")
+Challenge.create(id: 103, user_id: 55, language: "Turkish", verb: "(i) bilmek", eng_verb: "to know", image_url: "https://plus.unsplash.com/premium_photo-1674831140622-93f54b70bfbf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80", image_alt_text: "Elephant")
 # #correct sentence:
-Sentence.create(id: 302, challenge_id: 103, grammar_point: "görüldü geçmiş zaman (miş)", eng_grammar_point: "evidential past tense", user_sent: "Hindistan'ı ziyaret ettiğinde bir fili binmiş.", ai_sent: "Hindistan'ı ziyaret ettiğinde bir fili binmiş.")
+Sentence.create(id: 302, challenge_id: 103, grammar_point: "belirsiz geçmiş zaman (-miş)", eng_grammar_point: "evidential past tense", user_sent: "Hindistan'ı ziyaret ettiği için, bir fili binmeyi bilmiş.", ai_sent: "Hindistan'ı ziyaret ettiği için, bir fili binmeyi bilmiş.")
 # #incorrect sentence:
 Sentence.create(id: 303, challenge_id: 103, grammar_point: "zarf fiili (erek/arak)", eng_grammar_point: "adverbial participle", user_sent: "Filleri çok şey bilerek, hayvanat bahçesin işini alabildim.", ai_sent: "Filler hakkında çok şey bilerek, hayvanat bahçesinde işi alabildim.")
 
 
-#### Spanish Words ####
-# SpanishVerb.create(verb: "hablar", eng_verb: "to speak")
-# SpanishVerb.create(verb: "bailar", eng_verb: "to dance")
-# SpanishVerb.create(verb: "correr", eng_verb: "to run")
-# SpanishVerb.create(verb: "dormir", eng_verb: "to sleep")
-# SpanishVerb.create(verb: "comer", eng_verb: "to be eat")
+#### Spanish Words & Grammar Points ####
+# Verb.create(language: "Spanish", verb: "hablar", eng_verb: "to speak")
+# Verb.create(language: "Spanish", verb: "bailar", eng_verb: "to dance")
+# Verb.create(language: "Spanish", verb: "correr", eng_verb: "to run")
+# Verb.create(language: "Spanish", verb: "dormir", eng_verb: "to sleep")
+# Verb.create(language: "Spanish", verb: "comer", eng_verb: "to be eat")
 
-#### Spanish Grammar Points ####
-# SpanishGrammar.create(grammar_point: "presente", eng_grammar_point: "simple present")
-# SpanishGrammar.create(grammar_point: "pretérito perfecto simple", eng_grammar_point: "simple past")
-# SpanishGrammar.create(grammar_point: "futuro simple", eng_grammar_point: "simple future")
-# SpanishGrammar.create(grammar_point: "pretérito indefinido", eng_grammar_point: "past continous")
-# SpanishGrammar.create(grammar_point: "adverbio", eng_grammar_point: "adverb")
+# GrammarPoint.create(language: "Spanish", grammar_point: "presente", eng_grammar_point: "simple present")
+# GrammarPoint.create(language: "Spanish", grammar_point: "pretérito perfecto simple", eng_grammar_point: "simple past")
+# GrammarPoint.create(language: "Spanish", grammar_point: "futuro simple", eng_grammar_point: "simple future")
+# GrammarPoint.create(language: "Spanish", grammar_point: "pretérito indefinido", eng_grammar_point: "past continous")
+# GrammarPoint.create(language: "Spanish", grammar_point: "adverbio", eng_grammar_point: "adverb")
 
 
-#### Turkish Words ####
-# TurkishVerb.create(verb: "(e/a) gitmek", eng_verb: "to go")
-# TurkishVerb.create(verb: "(i) istemek", eng_verb: "to want")
-# TurkishVerb.create(verb: "(i) bilmek", eng_verb: "to know")
-# TurkishVerb.create(verb: "(i) anlamak", eng_verb: "to understand")
-# TurkishVerb.create(verb: "(den/dan) korkmak", eng_verb: "to be afraid")
+#### Turkish Words & Grammar Points ####
+# Verb.create(language: "Turkish", verb: "(le/la) uğraşmak", eng_verb: "to deal with")
+# Verb.create(language: "Turkish", verb: "(e/a) gitmek", eng_verb: "to go")
+# Verb.create(language: "Turkish", verb: "(e/a) tavsiye etmek", eng_verb: "to recommend")
+# Verb.create(language: "Turkish", verb: "(e/a) aldırmak", eng_verb: "to pay attention/to ignore")
+# Verb.create(language: "Turkish", verb: "(i) tercih etmek", eng_verb: "to prefer")
+# Verb.create(language: "Turkish", verb: "(i) bilmek", eng_verb: "to know")
+# Verb.create(language: "Turkish", verb: "(i) alışmak", eng_verb: "to get used to")
+# Verb.create(language: "Turkish", verb: "(den/dan) korkmak", eng_verb: "to be afraid")
+# Verb.create(language: "Turkish", verb: "(den/dan) vazgeçmek", eng_verb: "to change")
+# Verb.create(language: "Turkish", verb: "(den/dan) yorulmak", eng_verb: "to be tired")
 
-#### Turkish Grammar Points ####
-# TurkishGrammar.create(grammar_point: "geniş zaman", eng_grammar_point: "simple present")
-# TurkishGrammar.create(grammar_point: "geçmiş zaman", eng_grammar_point: "simple past")
-# TurkishGrammar.create(grammar_point: "görüldü geçmiş zaman (miş)", eng_grammar_point: "evidential past tense")
-# TurkishGrammar.create(grammar_point: "gelecek zaman", eng_grammar_point: "simple future")
-# TurkishGrammar.create(grammar_point: "zarf fiili (erek/arak)", eng_grammar_point: "adverbial participle")
+
+# GrammarPoint.create(language: "Turkish", grammar_point: "şimdiki zaman (-iyor)", eng_grammar_point: "present/present continuous tense")
+# GrammarPoint.create(language: "Turkish", grammar_point: "şimdiki zaman resmi (-mekte)", eng_grammar_point: "formal present/present continuous tense")
+# GrammarPoint.create(language: "Turkish", grammar_point: "geniş zaman (-ir/-er)", eng_grammar_point: "simple present tense")
+# GrammarPoint.create(language: "Turkish", grammar_point: "gelecek zaman (-ecek)", eng_grammar_point: "future tense")
+# GrammarPoint.create(language: "Turkish", grammar_point: "olumlu geçmiş zaman (-di/-tı)", eng_grammar_point: "positive past tense")
+# GrammarPoint.create(language: "Turkish", grammar_point: "olumsuz geçmiş zaman (-me/-ma +di/-tı)", eng_grammar_point: "negative past tense")
+# GrammarPoint.create(language: "Turkish", grammar_point: "belirsiz geçmiş zaman (-miş)", eng_grammar_point: "evidential past tense")
+# GrammarPoint.create(language: "Turkish", grammar_point: "zarf fiili (-erek/-arak)", eng_grammar_point: "adverbial participle")
+# GrammarPoint.create(language: "Turkish", grammar_point: "ulaçlar sebep (-me/-ma +kişi için)", eng_grammar_point: "because")
+# GrammarPoint.create(language: "Turkish", grammar_point: "ulaçlar amaç (-mek için)", eng_grammar_point: "in order to")
