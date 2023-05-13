@@ -10,11 +10,13 @@
 #### Spanish ####
 User.create(id: 1, name: "Alexis", preferred_lang: "Spanish")
 
+
 Challenge.create(id: 100, user_id: 1, language: "Spanish", verb: "hablar", eng_verb: "to speak", image_url: "https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80", image_alt_text: "Paris from above")
 #correct sentence:
 Sentence.create(id: 200, challenge_id: 100, grammar_point: "presente", eng_grammar_point: "simple present", user_sent: "Él habla español y francés con fluidez.", ai_sent: "Él habla español y francés con fluidez.")
 #incorrect sentence:
 Sentence.create(id: 201, challenge_id: 100, grammar_point: "pretérito indefinido", eng_grammar_point: "past continous", user_sent: "Mi dos hijos estaban hablo francés al revisor de tren.", ai_sent: "Mis dos hijos estaban hablando francés al revisor del tren.")
+
 
 Challenge.create(id: 101, user_id: 1, language: "Spanish", verb: "comer", eng_verb: "to eat", image_url: "https://images.unsplash.com/photo-1602273660127-a0000560a4c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80", image_alt_text: "Noodles, Chicken, and Momos")
 #correct sentence:
@@ -26,11 +28,13 @@ Sentence.create(id: 203, challenge_id: 101, grammar_point: "futuro simple", eng_
 #### Turkish ####
 User.create(id: 55, name: "Deniz", preferred_lang: "Turkish")
 
+
 Challenge.create(id: 102, user_id: 55, language: "Turkish", verb: "(e/a) gitmek", eng_verb: "to go", image_url: "https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80", image_alt_text: "Plane flying")
 #correct sentence:
 Sentence.create(id: 300, challenge_id: 102, grammar_point: "gelecek zaman", eng_grammar_point: "simple future", user_sent: "Yarın annem beni havalimanına bırakmak için araba kullanacak.", ai_sent: "Yarın annem beni havalimanına bırakmak için araba kullanacak.")
 #incorrect sentence:
 Sentence.create(id: 301, challenge_id: 102, grammar_point: "geçmiş zaman", eng_grammar_point: "past simple", user_sent: "Dün havalimana gittik ama arkadaşım uçak gelmedi.", ai_sent: "Dün havalimanına gittik, ancak arkadaşımızın uçağı gelmedi.")
+
 
 Challenge.create(id: 103, user_id: 55, language: "Turkish", verb: "(i) istemek", eng_verb: "to understand", image_url: "https://plus.unsplash.com/premium_photo-1674831140622-93f54b70bfbf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80", image_alt_text: "Elephant")
 # #correct sentence:
