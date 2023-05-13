@@ -1,0 +1,2 @@
+class GrammarPoint < ApplicationRecord
+end

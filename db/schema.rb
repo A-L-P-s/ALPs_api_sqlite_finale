@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_11_230623) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_13_183036) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,6 +24,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_11_230623) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_challenges_on_user_id"
+  end
+
+  create_table "grammar_points", force: :cascade do |t|
+    t.string "language"
+    t.string "grammar_point"
+    t.string "eng_grammar_point"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sentences", force: :cascade do |t|
@@ -40,6 +48,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_11_230623) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "preferred_lang"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "verbs", force: :cascade do |t|
+    t.string "language"
+    t.string "verb"
+    t.string "eng_verb"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
