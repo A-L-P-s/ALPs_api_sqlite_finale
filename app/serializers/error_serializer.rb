@@ -8,13 +8,21 @@ class ErrorSerializer
 
   def serializable_hash
     {
-      error: [
-        {
+      error: {
           status: @status,
           title: @exception.class.to_s,
           detail: @exception.message
         }
-      ]
     }
   end
+
+  # def statement_invalid_hash
+  #   {
+  #     error: {
+  #         status: @status,
+  #         title: "ActiveRecord::StatementInvalid",
+  #         detail: "Challenge cannot be deleted."
+  #       }
+  #   }
+  # end
 end
