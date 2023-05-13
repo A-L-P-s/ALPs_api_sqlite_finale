@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: [:index, :show] do
         get '/challenges/prompt', to: 'users/challenges#new'
-        resources :challenges, except: [:update]
+      resources :challenges, except: [:update], controller: 'users/challenges'
       end
     end
   end
