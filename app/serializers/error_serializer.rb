@@ -8,7 +8,7 @@ class ErrorSerializer
 
   def serializable_hash
     {
-      error: [
+      errors: [
         {
           status: @status,
           title: @exception.class.to_s,
