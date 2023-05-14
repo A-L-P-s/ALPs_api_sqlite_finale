@@ -23,6 +23,7 @@ RSpec.describe 'Users/ChallengesController' do
       it "can delete a challenge and associated sentences" do
         expect(@turkish_user.challenges.count).to eq(2)
         expect(@spanish_user.challenges.count).to eq(1)
+        expect(Sentence.all.count).to eq(6)
 
         delete "/api/v1/users/#{@turkish_user.id}/challenges/#{@tr_challenge1.id}"
 
@@ -30,6 +31,7 @@ RSpec.describe 'Users/ChallengesController' do
         expect(response).to have_http_status(204)
         expect(@turkish_user.challenges.count).to eq(1)
         expect(@spanish_user.challenges.count).to eq(1)
+        expect(Sentence.all.count).to eq(4)
       end
     end
 
