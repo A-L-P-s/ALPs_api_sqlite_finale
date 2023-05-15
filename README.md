@@ -490,7 +490,7 @@ View these endpoints in [Postman] (add link here)
 ---
 <br>
 
-| [<img alt="Kirk Hauck" width="100" src=".github/kirk.jpg"/>](https://www.linkedin.com/in/kirk-hauck/) | [<img alt="Bea Ordonez" width="100" src=".github/bea.jpg"/>](https://www.linkedin.com/in/bea-ordonez/) | [<img alt="Katherine Blaine" width="100" src=".github/katherine.jpg"/>](https://www.linkedin.com/in/katherinekblaine/) | [<img alt="Tyalor Pridgen" width="100" src=".github/taylor.jpg"/>](https://www.linkedin.com/in/taylor-pridgen-a3aa7918/) | [<img alt="Brian Zanti" width="100" src=".github/brian.jpg"/>](https://www.linkedin.com/in/brianzanti/) | 
+| [<img alt="Kirk Hauck" width="100" src=".github/kirk.jpg"/>](https://www.linkedin.com/in/kirk-hauck/) | [<img alt="Bea Ordonez" width="100" src=".github/bea.jpg"/>](https://www.linkedin.com/in/bea-ordonez/) | [<img alt="Katherine Blaine" width="100" src=".github/Katherine.jpg"/>](https://www.linkedin.com/in/katherinekblaine/) | [<img alt="Tyalor Pridgen" width="100" src=".github/taylor.jpg"/>](https://www.linkedin.com/in/taylor-pridgen-a3aa7918/) | [<img alt="Brian Zanti" width="100" src=".github/brian.jpg"/>](https://www.linkedin.com/in/brianzanti/) | 
 | ------------------ | ------------ | -------------- | ----------- | -------------- | 
 | Kirk Hauck | Bea Ordonez | Katherine Blaine | Tyalor Pridgen | Brian Zanti | 
 | FrontEnd | FrontEnd | FrontEnd | Project Mentor | Project Manager |
