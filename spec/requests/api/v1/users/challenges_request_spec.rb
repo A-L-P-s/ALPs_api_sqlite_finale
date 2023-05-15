@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Users/ChallengesController' do
+RSpec.describe "Api::V1::Challenges::Challenges", type: :request do
   describe "#destroy" do
     before(:each) do
       @turkish_user = User.create(id: 55, name: "Deniz", preferred_lang: "Turkish")
@@ -23,6 +23,7 @@ RSpec.describe 'Users/ChallengesController' do
       it "can delete a challenge and associated sentences" do
         expect(@turkish_user.challenges.count).to eq(2)
         expect(@spanish_user.challenges.count).to eq(1)
+        expect(Sentence.all.count).to eq(6)
 
         delete "/api/v1/users/#{@turkish_user.id}/challenges/#{@tr_challenge1.id}"
 
@@ -30,6 +31,7 @@ RSpec.describe 'Users/ChallengesController' do
         expect(response).to have_http_status(204)
         expect(@turkish_user.challenges.count).to eq(1)
         expect(@spanish_user.challenges.count).to eq(1)
+        expect(Sentence.all.count).to eq(4)
       end
     end
 
@@ -42,12 +44,110 @@ RSpec.describe 'Users/ChallengesController' do
 
         parsed_data = JSON.parse(response.body, symbolize_names: true)
         expect(response).to have_http_status(404)
-
         expect(parsed_data).to be_a(Hash)
-        expect(parsed_data.keys).to eq([:error])
-        expect(parsed_data[:error]).to be_an(Hash)
-        expect(parsed_data[:error].keys).to eq(%i[status title detail])
-        expect(parsed_data[:error][:detail]).to eq("Challenge cannot be deleted.")
+        expect(parsed_data.keys).to eq([:errors])
+        expect(parsed_data[:errors]).to be_a(Array)
+        expect(parsed_data[:errors][0].keys).to eq(%i[status title detail])
+        expect(parsed_data[:errors][0][:detail]).to eq("Challenge cannot be deleted")
+      end
+    end
+  end
+  
+  describe "#show" do
+    before(:each) do
+      @user1 = User.create(id: 1, name: "Alexis", preferred_lang: "Spanish")
+      @user2 = User.create(id: 55, name: "Deniz", preferred_lang: "Turkish")
+      @user3 = User.create(id: 100, name: "Megan", preferred_lang: "English")
+
+      @verb1 = Verb.create(language: "Spanish", verb: "hablar", eng_verb: "to speak")
+      @verb2 = Verb.create(language: "Spanish", verb: "bailar", eng_verb: "to dance")
+
+      @point1 = GrammarPoint.create(language: "Spanish", grammar_point: "presente", eng_grammar_point: "simple present tense")
+      @point2 = GrammarPoint.create(language: "Spanish", grammar_point: "pretérito perfecto", eng_grammar_point: "present perfect tense")
+
+      @challenge1 = @user1.challenges.create(id: 101, user_id: 1, language: "Spanish", verb: @verb1.verb, eng_verb: @verb1.eng_verb, image_url: "image", image_alt_text: "alt_text")
+      @challenge2 = @user2.challenges.create(id: 102, user_id: 55, language: "Spanish", verb: @verb2.verb, eng_verb: @verb2.eng_verb, image_url: "image", image_alt_text: "alt_text")
+
+      @sentence1 = @challenge1.sentences.create(id: 42, challenge_id: 101, grammar_point: @point1.grammar_point, eng_grammar_point: @point1.eng_grammar_point,
+                                                user_sent: "Me gusta comer sushi de vez en cuando.", ai_sent: "Me gusta comer sushi de vez en cuando.")
+      @sentence2 = @challenge2.sentences.create(id: 43, challenge_id: 101, grammar_point: @point2.grammar_point, eng_grammar_point: @point2.eng_grammar_point,
+                                                user_sent: "Mis hijos no comer platos de fideos.", ai_sent: "Mis hijos no comerán platos de fideos.")
+    end
+
+    describe "when successful" do
+      it 'returns one challenge' do
+        get "/api/v1/users/#{@user1.id}/challenges/#{@challenge1.id}"
+
+        expect(response).to be_successful
+
+        parsed_data = JSON.parse(response.body, symbolize_names: true)
+
+        expect(parsed_data).to be_a Hash
+
+        expect(parsed_data).to have_key(:data)
+        expect(parsed_data[:data]).to be_a Hash
+
+        expect(parsed_data[:data]).to have_key(:id)
+        expect(parsed_data[:data][:id]).to be_a String
+
+        expect(parsed_data[:data]).to have_key(:type)
+        expect(parsed_data[:data][:type]).to be_a String
+
+        expect(parsed_data[:data]).to have_key(:attributes)
+        expect(parsed_data[:data][:attributes]).to be_a Hash
+
+        expect(parsed_data[:data][:attributes]).to have_key(:id)
+        expect(parsed_data[:data][:attributes][:id]).to be_an Integer
+
+        expect(parsed_data[:data][:attributes]).to have_key(:user_id)
+        expect(parsed_data[:data][:attributes][:user_id]).to be_an Integer
+
+        expect(parsed_data[:data][:attributes]).to have_key(:language)
+        expect(parsed_data[:data][:attributes][:language]).to be_a String
+
+        expect(parsed_data[:data][:attributes]).to have_key(:verb)
+        expect(parsed_data[:data][:attributes][:verb]).to be_a String
+
+        expect(parsed_data[:data][:attributes]).to have_key(:eng_verb)
+        expect(parsed_data[:data][:attributes][:eng_verb]).to be_a String
+
+        expect(parsed_data[:data][:attributes]).to have_key(:image_url)
+        expect(parsed_data[:data][:attributes][:image_url]).to be_a String
+
+        expect(parsed_data[:data][:attributes]).to have_key(:image_alt_text)
+        expect(parsed_data[:data][:attributes][:image_alt_text]).to be_a String
+      end
+
+      it 'returns any challenge by id' do
+        get "/api/v1/users/#{@user2.id}/challenges/#{@challenge2.id}"
+
+        expect(response).to be_successful
+
+        parsed_data = JSON.parse(response.body, symbolize_names: true)
+
+        expect(parsed_data).to be_a Hash
+      end
+    end
+
+    describe "when NOT sccuessful" do
+      it 'returns 404 if challenge does not exist' do
+        get "/api/v1/users/234523/challenges/23452345456"
+
+        expect(response.status).to eq(404)
+
+        parsed_data = JSON.parse(response.body, symbolize_names: true)
+
+        expect(parsed_data).to be_a Hash
+        expect(parsed_data).to have_key(:errors)
+
+        expect(parsed_data[:errors]).to be_an Array
+        expect(parsed_data[:errors].first).to be_a Hash
+
+        expect(parsed_data[:errors].first).to have_key(:status)
+        expect(parsed_data[:errors].first[:status]).to be_a Integer
+
+        expect(parsed_data[:errors].first[:detail]).to be_a String
+        expect(parsed_data[:errors].first[:detail]).to eq("Couldn't find Challenge with 'id'=23452345456")
       end
     end
   end

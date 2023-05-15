@@ -18,13 +18,15 @@ class ErrorSerializer
     }
   end
 
-  # def statement_invalid_hash
-  #   {
-  #     error: {
-  #         status: @status,
-  #         title: "ActiveRecord::StatementInvalid",
-  #         detail: "Challenge cannot be deleted."
-  #       }
-  #   }
-  # end
+  def challenge_destroy_error
+    {
+      errors: [
+        {
+          status: @status,
+          title: ActiveRecord::RecordNotFound,
+          detail: @exception
+        }
+      ]
+    }
+  end
 end
