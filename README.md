@@ -427,11 +427,11 @@ View these endpoints in [Postman] (add link here)
  <summary><h2 id="apis">External APIs</h2></summary>
 
 ---
-<summary><img src= ".github/logo_unsplash.jpg" height="35"><a href="https://unsplash.com/developers"><strong> Unsplash Image API</strong></a></summary>
+<img src= ".github/logo_unsplash.jpg" height="35"><a href="https://unsplash.com/developers"><strong> Unsplash Image API</strong></a>
 
 <p>- Used to generate the random theme image for every writing challenge.</p><br>
 
-<summary><img src=".github/logo_open_ai.jpg" height="35"><a href="https://openai.com/product"><strong>  OpenAI API</strong></a></summary>
+<img src=".github/logo_open_ai.jpg" height="35"><a href="https://openai.com/product"><strong>  OpenAI API</strong></a>
 
 <p>- Used to correct sentences and provide immediate feedback on user's language output.</p>
 
@@ -443,22 +443,22 @@ View these endpoints in [Postman] (add link here)
 
 ---
 <!-- AWS -->
-<summary><img src= "https://logos-world.net/wp-content/uploads/2021/08/Amazon-Web-Services-AWS-Logo.png" style="width:60px; height:40px;"><a href="https://aws.amazon.com/"><strong> Elastic Beanstock Deployment</strong></a></summary>
+<img src= "https://logos-world.net/wp-content/uploads/2021/08/Amazon-Web-Services-AWS-Logo.png" style="width:60px; height:40px;"><a href="https://aws.amazon.com/"><strong> Elastic Beanstock Deployment</strong></a>
 
 <p>- Phase 2: Amazon Web Services was used to deploy the application.</p><br>
 
 <!-- Python -->
-<summary><img src=".github/logo_python.jpg" height="30"><a href="https://www.python.org/"><strong> Python Programming Language</strong></a></summary>
+<img src=".github/logo_python.jpg" height="30"><a href="https://www.python.org/"><strong> Python Programming Language</strong></a>
 
 <p>- Phase 2: Used as the programming language to build microservices.</p><br>
 
 <!-- Django -->
-<summary><img src=".github/logo_django.jpg" height="30"><a href="https://www.djangoproject.com/"><strong> Django Web Framework</strong></a></summary>
+<img src=".github/logo_django.jpg" height="30"><a href="https://www.djangoproject.com/"><strong> Django Web Framework</strong></a>
 
 <p>- Phase 2: Used as the web framework to build microservices.</p><br>
 
 <!-- Twilio / Sendgrid -->
-<summary><img src=".github/logo_twilio_sendgrid.jpg" height="28"><a href="https://sendgrid.com/"><strong> Twilio/Sendgrid Email Service</strong></a></summary>
+<img src=".github/logo_twilio_sendgrid.jpg" height="28"><a href="https://sendgrid.com/"><strong> Twilio/Sendgrid Email Service</strong></a>
 
 <p>- Phase 2: Used to allow users to email themselves a copy of their completed challenge.</p>
 
