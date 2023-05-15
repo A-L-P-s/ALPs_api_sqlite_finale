@@ -78,5 +78,19 @@ RSpec.describe "Api::V1::Challenges::Challenges", type: :request do
     get "/api/v1/users/234523/challenges/23452345456"
 
     expect(response.status).to eq(404)
+
+    parsed_data = JSON.parse(response.body, symbolize_names: true)
+
+    expect(parsed_data).to be_a Hash
+    expect(parsed_data).to have_key(:errors)
+
+    expect(parsed_data[:errors]).to be_an Array
+    expect(parsed_data[:errors].first).to be_a Hash
+
+    expect(parsed_data[:errors].first).to have_key(:status)
+    expect(parsed_data[:errors].first[:status]).to be_a Integer
+
+    expect(parsed_data[:errors].first[:detail]).to be_a String
+    expect(parsed_data[:errors].first[:detail]).to eq("Couldn't find Challenge with 'id'=23452345456")
   end
 end
