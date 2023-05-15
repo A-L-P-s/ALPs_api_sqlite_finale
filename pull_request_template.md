@@ -3,9 +3,9 @@
 - 
 
 ---
-This is related to ticket number #
+This is related to #
 
-This closes ticket number #
+This closes #
 
 [] I linted my work.
 

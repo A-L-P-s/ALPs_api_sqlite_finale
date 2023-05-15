@@ -17,4 +17,16 @@ class ErrorSerializer
       ]
     }
   end
+
+  def challenge_destroy_error
+    {
+      errors: [
+        {
+          status: @status,
+          title: ActiveRecord::RecordNotFound,
+          detail: @exception
+        }
+      ]
+    }
+  end
 end
