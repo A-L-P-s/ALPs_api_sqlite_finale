@@ -10,6 +10,10 @@ class ApplicationController < ActionController::API
     render json: ErrorSerializer.new(exception, 422).serializable_hash, status: :unprocessable_entity #422
   end
 
+  def cant_delete_challenge
+    render json: ErrorSerializer.new("Challenge cannot be deleted", :not_found).challenge_destroy_error, status: :not_found
+  end
+
   def imalittleteapot(exception)
     render json: ErrorSerializer.new(exception, 418).serializable_hash, status: :teapot #418
   end

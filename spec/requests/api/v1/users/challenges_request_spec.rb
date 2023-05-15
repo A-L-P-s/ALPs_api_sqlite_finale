@@ -47,9 +47,9 @@ RSpec.describe 'Users/ChallengesController' do
 
         expect(parsed_data).to be_a(Hash)
         expect(parsed_data.keys).to eq([:errors])
-        expect(parsed_data[:errors]).to be_an(Hash)
-        expect(parsed_data[:errors].keys).to eq(%i[status title detail])
-        expect(parsed_data[:errors][:detail]).to eq("Couldn't find Challenge with ")
+        expect(parsed_data[:errors]).to be_a(Array)
+        expect(parsed_data[:errors][0].keys).to eq(%i[status title detail])
+        expect(parsed_data[:errors][0][:detail]).to eq("Challenge cannot be deleted")
       end
     end
   end
