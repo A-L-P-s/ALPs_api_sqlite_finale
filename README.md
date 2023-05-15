@@ -18,8 +18,6 @@
 </div>
 <hr>
 
-<br>
-
 <!-- TABLE OF CONTENTS -->
 ### Table of Contents
 
@@ -51,7 +49,6 @@
 <!-- ABOUT THE PROJECT -->
 <h2 id="about-the-project">About the Project</h2>
 
----
 <span>🔸</span> [Production Website] (add link here)
 <br>
 <span>🔸</span> [Backend Service](https://git.heroku.com/calm-thicket-75558.git)
@@ -107,7 +104,6 @@ The `agile methodology` was chosen for backend development to expedite the app's
 
 <!-- GETTING STARTED -->
 ## Getting Started
----
 
 If you'd like to demo this API on your local machine:
 1. Ensure you have the prerequisites
@@ -200,10 +196,10 @@ Happy path, sad path, and edge case testing were considered and tested. When a r
 </details>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+  
 <!-- Endpoints -->
 ## Endpoints
----
+
 <details>
   <summary><code>GET "/api/v1/users"</code></summary>
   Response:
@@ -423,10 +419,8 @@ View these endpoints in [Postman] (add link here)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- External APIs -->
+<h2 id="apis">External APIs</h2>
 
- <summary><h2 id="apis">External APIs</h2></summary>
-
----
 <img src= ".github/logo_unsplash.jpg" height="35"><a href="https://unsplash.com/developers"><strong> Unsplash Image API</strong></a>
 
 <p>- Used to generate the random theme image for every writing challenge.</p><br>
@@ -438,10 +432,8 @@ View these endpoints in [Postman] (add link here)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- Stretch Technologies -->
-
 <h2 id="technologies">Stretch Technologies</h2>
 
----
 <!-- AWS -->
 <img src= "https://logos-world.net/wp-content/uploads/2021/08/Amazon-Web-Services-AWS-Logo.png" style="width:60px; height:40px;"><a href="https://aws.amazon.com/"><strong> Elastic Beanstock Deployment</strong></a>
 
@@ -464,12 +456,9 @@ View these endpoints in [Postman] (add link here)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 <!-- Future Iterations -->
-
 <h2 id="refactor">Future Iterations</h2>
 
----
 <details>
   <summary>See Refactoring Suggestions</summary>
   <dl>
@@ -487,7 +476,6 @@ View these endpoints in [Postman] (add link here)
 
 <h2 id="contact">Contributors</h2>
 
----
 <br>
 
 | [<img alt="Kirk Hauck" width="100" src=".github/kirk.jpg"/>](https://www.linkedin.com/in/kirk-hauck/) | [<img alt="Bea Ordonez" width="100" src=".github/bea.jpg"/>](https://www.linkedin.com/in/bea-ordonez/) | [<img alt="Katherine Blaine" width="100" src=".github/Katherine.jpg"/>](https://www.linkedin.com/in/katherinekblaine/) | [<img alt="Tyalor Pridgen" width="100" src=".github/taylor.jpg"/>](https://www.linkedin.com/in/taylor-pridgen-a3aa7918/) | [<img alt="Brian Zanti" width="100" src=".github/brian.jpg"/>](https://www.linkedin.com/in/brianzanti/) | 
