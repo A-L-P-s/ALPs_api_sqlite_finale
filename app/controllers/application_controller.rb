@@ -7,10 +7,10 @@ class ApplicationController < ActionController::API
   end
 
   def record_invalid(exception)
-    render json: ErrorSerializer.new(exception, 422).serializable_hash, status: :unprocessable_entity #422
+    render json: ErrorSerializer.new(exception, 422).serializable_hash, status: :unprocessable_entity # 422
   end
 
   def imalittleteapot(exception)
-    render json: ErrorSerializer.new(exception, 418).serializable_hash, status: :teapot #418
+    render json: ErrorSerializer.new(exception, 418).serializable_hash, status: :teapot # 418
   end
 end

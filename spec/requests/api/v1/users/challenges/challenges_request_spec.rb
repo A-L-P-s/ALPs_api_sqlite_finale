@@ -15,8 +15,10 @@ RSpec.describe "Api::V1::Challenges::Challenges", type: :request do
     @challenge1 = @user1.challenges.create(id: 101, user_id: 1, language: "Spanish", verb: @verb1.verb, eng_verb: @verb1.eng_verb, image_url: "image", image_alt_text: "alt_text")
     @challenge2 = @user2.challenges.create(id: 102, user_id: 55, language: "Spanish", verb: @verb2.verb, eng_verb: @verb2.eng_verb, image_url: "image", image_alt_text: "alt_text")
 
-    @sentence1 = @challenge1.sentences.create(id: 42, challenge_id: 101, grammar_point: @point1.grammar_point, eng_grammar_point: @point1.eng_grammar_point, user_sent: "Me gusta comer sushi de vez en cuando.", ai_sent: "Me gusta comer sushi de vez en cuando.")
-    @sentence2 = @challenge2.sentences.create(id: 43, challenge_id: 101, grammar_point: @point2.grammar_point, eng_grammar_point: @point2.eng_grammar_point, user_sent: "Mis hijos no comer platos de fideos.", ai_sent: "Mis hijos no comerán platos de fideos.")
+    @sentence1 = @challenge1.sentences.create(id: 42, challenge_id: 101, grammar_point: @point1.grammar_point, eng_grammar_point: @point1.eng_grammar_point,
+                                              user_sent: "Me gusta comer sushi de vez en cuando.", ai_sent: "Me gusta comer sushi de vez en cuando.")
+    @sentence2 = @challenge2.sentences.create(id: 43, challenge_id: 101, grammar_point: @point2.grammar_point, eng_grammar_point: @point2.eng_grammar_point,
+                                              user_sent: "Mis hijos no comer platos de fideos.", ai_sent: "Mis hijos no comerán platos de fideos.")
   end
 
   it 'returns one challenge' do
