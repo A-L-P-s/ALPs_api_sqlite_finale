@@ -1,10 +1,14 @@
 class Api::V1::Users::ChallengesController < ApplicationController
   before_action :check_challenge, only: [:destroy]
 
+  def show
+    render json: ChallengeSerializer.new(Challenge.find(params[:id]))
+  end
+  
   def destroy
     @challenge.destroy
   end
-
+  
   private
   def check_challenge
     @challenge = Challenge.find_by(user_id: params[:user_id], id: params[:id])

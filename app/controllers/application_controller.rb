@@ -5,7 +5,7 @@ class ApplicationController < ActionController::API
   def record_not_found(exception)
     render json: ErrorSerializer.new(exception, 404).serializable_hash, status: :not_found # 404
   end
-
+  
   def record_invalid(exception)
     render json: ErrorSerializer.new(exception, 422).serializable_hash, status: :unprocessable_entity #422
   end
