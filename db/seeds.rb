@@ -58,7 +58,7 @@ Sentence.create(id: 47, challenge_id: 103, grammar_point: "pretérito indefinido
 Verb.create(language: "Turkish", verb: "(le/la) uğraşmak", eng_verb: "to deal with")
 Verb.create(language: "Turkish", verb: "(e/a) gitmek", eng_verb: "to go")
 Verb.create(language: "Turkish", verb: "(e/a) tavsiye etmek", eng_verb: "to recommend")
-Verb.create(language: "Turkish", verb: "(e/a) aldırmak", eng_verb: "to pay attention/to ignore")
+Verb.create(language: "Turkish", verb: "(e/a) aldırmamak", eng_verb: "to ignore")
 Verb.create(language: "Turkish", verb: "(i) tercih etmek", eng_verb: "to prefer")
 Verb.create(language: "Turkish", verb: "(i) bilmek", eng_verb: "to know")
 Verb.create(language: "Turkish", verb: "(i) alışmak", eng_verb: "to get used to")
@@ -89,8 +89,8 @@ Challenge.create(id: 51, user_id: 55, language: "Turkish", verb: "(i) bilmek", e
 Sentence.create(id: 12, challenge_id: 51, grammar_point: "belirsiz geçmiş zaman (-miş)", eng_grammar_point: "evidential past tense", user_sent: "Hindistan'ı ziyaret ettiği için, bir fili binmeyi bilmiş.", ai_sent: "Hindistan'ı ziyaret ettiği için, bir fili binmeyi bilmiş.")
 Sentence.create(id: 13, challenge_id: 51, grammar_point: "zarf fiili (erek/arak)", eng_grammar_point: "adverbial participle", user_sent: "Filleri çok şey bilerek, hayvanat bahçesin işini alabildim.", ai_sent: "Filler hakkında çok şey bilerek, hayvanat bahçesinde işi alabildim.")
 
-Challenge.create(id: 52, user_id: 1, language: "Turkish", verb: "(e/a) aldırmak", eng_verb: "to pay attention/to ignore", image_url: "https://images.unsplash.com/photo-1681477492304-374921480d2e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80", image_alt_text: "holding a cappuccino")
-Sentence.create(id: 14, challenge_id: 52, grammar_point: "ulaçlar amaç (-mek için)", eng_grammar_point: "in order to", user_sent: "Bugünün dersine aldırmak için üç kahve içmeliyim.", ai_sent: "Bugünün dersine aldırmak için üç kahve içmeliyim.")
+Challenge.create(id: 52, user_id: 1, language: "Turkish", verb: "(e/a) aldırmamak", eng_verb: "to ignore", image_url: "https://images.unsplash.com/photo-1681477492304-374921480d2e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80", image_alt_text: "holding a cappuccino")
+Sentence.create(id: 14, challenge_id: 52, grammar_point: "ulaçlar amaç (-mek için)", eng_grammar_point: "in order to", user_sent: "Nişanlısının ailesini etkilemek için tuzlu kahveyi aldırmadı.", ai_sent: "Nişanlısının ailesini etkilemek için tuzlu kahveyi aldırmadı.")
 Sentence.create(id: 15, challenge_id: 52, grammar_point: "şimdiki zaman resmi (-mekte)", eng_grammar_point: "formal present/present continuous tense", user_sent: "Kahveyi içerken etrafındaki herkesi aldırmamakta.", ai_sent: "Kahve içerken etrafındaki herkese aldırmamakta.")
 
 Challenge.create(id: 53, user_id: 1, language: "Turkish", verb: "(den/dan) etkilenmek", eng_verb: "to be influenced by", image_url: "https://images.unsplash.com/photo-1682080307124-22e3e0bbc141?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80", image_alt_text: "experimental galaxy and ocean")
