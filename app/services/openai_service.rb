@@ -18,7 +18,7 @@ class OpenaiService
 
            If a sentence is correct, please return the same sentence. If a sentence is incorrect, please return the sentence with necessary corrections to that given sentence. Make sure to keep the provided verb and grammar point in your revision.
 
-           Please format the output as 
+           Please format the output as" 
         }
       ],
       "temperature": 0.9,
