@@ -1,0 +1,83 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"I am
+        trying to learn Turkish. This sentence uses the grammar belirsiz geçmiş zaman
+        (-miş) and the verb (i) bilmek: ''Hindistan''ı ziyaret ettiği için, bir fili
+        binmeyi bilmiş.''. Correct this sentence if it''s wrong and explain what you
+        changed. This sentence uses the grammar zarf fiili (erek/arak) and the verb
+        (i) bilmek: ''Filleri çok şey bilerek, hayvanat bahçesin işini alabildim.''.
+        Correct this sentence if it''s wrong and explain what you changed. Format
+        the output as a Ruby hash. Example: { sentence_1: ''your response'', sentence_2:
+        ''your response'', explanation_1: ''your response'', explanation_2: ''your
+        response'' }"}],"temperature":0.9,"max_tokens":600}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer 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
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 17 May 2023 19:24:43 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - user-qkbeb83nq2fbfkoomtctopra
+      Openai-Processing-Ms:
+      - '22221'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89242'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 505ms
+      X-Request-Id:
+      - e237456212c2399f1b8e457109e22920
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 7c8e3d7869ae290f-DEN
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpZCI6ImNoYXRjbXBsLTdISDJ6aFVwcHN5TmdUa0pSQ0hUV0FRMFdzR3V6Iiwib2JqZWN0IjoiY2hhdC5jb21wbGV0aW9uIiwiY3JlYXRlZCI6MTY4NDM1MTQ2MSwibW9kZWwiOiJncHQtMy41LXR1cmJvLTAzMDEiLCJ1c2FnZSI6eyJwcm9tcHRfdG9rZW5zIjoxODMsImNvbXBsZXRpb25fdG9rZW5zIjoyNDUsInRvdGFsX3Rva2VucyI6NDI4fSwiY2hvaWNlcyI6W3sibWVzc2FnZSI6eyJyb2xlIjoiYXNzaXN0YW50IiwiY29udGVudCI6IntcbiAgc2VudGVuY2VfMTogJ0hpbmRpc3RhblxcJ8SxIHppeWFyZXQgZXR0acSfaSBpw6dpbiwgYmlyIGZpbGkgYmlubWV5aSBiaWxtacWfLicsXG4gIHJlc3BvbnNlXzE6ICdIaW5kaXN0YW5cXCfEsSB6aXlhcmV0IGV0dGnEn2kgacOnaW4sIGJpciBmaWxpIGJpbm1leWkgw7bEn3Jlbm1pxZ8uJyxcbiAgZXhwbGFuYXRpb25fMTogJ0NoYW5nZWQgXCJiaWxtacWfXCIgdG8gXCLDtsSfcmVubWnFn1wiIHRvIGJldHRlciBjb252ZXkgdGhhdCB0aGUgcGVyc29uIGxlYXJuZWQgaG93IHRvIHJpZGUgYW4gZWxlcGhhbnQgZHVyaW5nIHRoZWlyIHRyaXAgdG8gSW5kaWEgdXNpbmcgdGhlIGJlbGlyc2l6IGdlw6dtacWfIHphbWFuICgtbWnFnykgdGVuc2UuJywgXG4gIHNlbnRlbmNlXzI6ICdGaWxsZXJpIMOnb2sgxZ9leSBiaWxlcmVrLCBoYXl2YW5hdCBiYWjDp2VzaW4gacWfaW5pIGFsYWJpbGRpbS4nLFxuICByZXNwb25zZV8yOiAnRmlsbGVyaSDDp29rIGl5aSBiaWxlcmVrLCBoYXl2YW5hdCBiYWjDp2VzaW5kZSBpxZ9pIGFsYWJpbGRpbS4nLFxuICBleHBsYW5hdGlvbl8yOiAnQ2hhbmdlZCBcIsWfZXlcIiB0byBcIml5aVwiIGFuZCBcImJhaMOnZXNpblwiIHRvIFwiYmFow6dlc2luZGVcIiB0byBjb3JyZWN0IHRoZSBncmFtbWFyIGFuZCBzeW50YXggb2YgdGhlIHNlbnRlbmNlLCBhbmQgdXNlZCB0aGUgemFyZiBmaWlsaSAoZXJlay9hcmFrKSB0ZW5zZSB0byBjb252ZXkgdGhlIGFjdGlvbiBvZiBsZWFybmluZyBhYm91dCB0aGUgZWxlcGhhbnRzIGluIG9yZGVyIHRvIGdldCB0aGUgam9iIGF0IHRoZSB6b28uJ1xufSJ9LCJmaW5pc2hfcmVhc29uIjoic3RvcCIsImluZGV4IjowfV19Cg==
+  recorded_at: Wed, 17 May 2023 19:24:43 GMT
+recorded_with: VCR 6.1.0
