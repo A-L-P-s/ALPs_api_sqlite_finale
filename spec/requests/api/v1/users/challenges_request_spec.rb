@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Api::V1::Challenges::Challenges", type: :request do
+RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
   describe "#destroy" do
     before(:each) do
       @turkish_user = User.create(id: 55, name: "Deniz", preferred_lang: "Turkish")
@@ -17,6 +17,29 @@ RSpec.describe "Api::V1::Challenges::Challenges", type: :request do
       @sp_challenge1 = Challenge.create(id: 100, user_id: 1, language: "Spanish", verb: "hablar", eng_verb: "to speak", image_url: "https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80", image_alt_text: "Paris from above")
       @sp_sentence1 = Sentence.create(id: 40, challenge_id: 100, grammar_point: "presente", eng_grammar_point: "simple present tense", user_sent: "Él habla español y francés con fluidez.", ai_sent: "Él habla español y francés con fluidez.")
       @sp_sentence2 = Sentence.create(id: 41, challenge_id: 100, grammar_point: "pretérito indefinido", eng_grammar_point: "simple past tense", user_sent: "Mi dos hijos estaban hablo francés al revisor de tren.", ai_sent: "Mis dos hijos estaban hablando francés al revisor del tren.")
+
+      @turk_verb1 = Verb.create(language: "Turkish", verb: "(le/la) uğraşmak", eng_verb: "to deal with")
+      @turk_verb2 = Verb.create(language: "Turkish", verb: "(e/a) gitmek", eng_verb: "to go")
+      @turk_verb3 = Verb.create(language: "Turkish", verb: "(e/a) tavsiye etmek", eng_verb: "to recommend")
+      @turk_gram1 = GrammarPoint.create(language: "Turkish", grammar_point: "şimdiki zaman (-iyor)", eng_grammar_point: "present/present continuous tense")
+      @turk_gram2 = GrammarPoint.create(language: "Turkish", grammar_point: "şimdiki zaman resmi (-mekte)", eng_grammar_point: "formal present/present continuous tense")
+      @turk_gram3 = GrammarPoint.create(language: "Turkish", grammar_point: "geniş zaman (-ir/-er)", eng_grammar_point: "simple present tense")
+
+      @spanish_verb1 = Verb.create(language: "Spanish", verb: "hablar", eng_verb: "to speak")
+      @spanish_verb2 = Verb.create(language: "Spanish", verb: "bailar", eng_verb: "to dance")
+      @span_gram1 = GrammarPoint.create(language: "Spanish", grammar_point: "presente", eng_grammar_point: "simple present tense")
+      @span_gram2 = GrammarPoint.create(language: "Spanish", grammar_point: "pretérito perfecto", eng_grammar_point: "present perfect tense")
+    end
+
+    it "creates a new prompt form" do
+      get "/api/v1/users/#{@turkish_user.id}/challenges/new"
+
+      expect(response).to be_successful
+      
+      parsed_data = JSON.parse(response.body, symbolize_names: true)
+      expect(parsed_data).to be_a(Hash)
+      expect(parsed_data.keys).to eq([:data])
+      expect(parsed_data[:data].keys).to eq([:id, :type, :attributes])
     end
 
     describe "when succesful" do
