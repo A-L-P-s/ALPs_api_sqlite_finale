@@ -107,18 +107,18 @@ The `agile methodology` was chosen for backend development to expedite the app's
 
 If you'd like to demo this API on your local machine:
 1. Ensure you have the prerequisites
-2. Sign up for external API Keys
-2. Clone this repo: `git clone git@github.com:A-L-P-s/ALPs_api.git`
-3. Navigate to the root folder: `cd ALPs_api`
-4. Run: `bundle install`
-5. Run: `rails db:{create,migrate,seed}`
-6. Run: `bundle exec figaro install`
-7. In the `app/config/application.yml` file add you API keys:
+1. Sign up for external API Keys
+1. Clone this repo: `git clone git@github.com:A-L-P-s/ALPs_api.git`
+1. Navigate to the root folder: `cd ALPs_api`
+1. Run: `bundle install`
+1. Run: `rails db:{create,migrate,seed}`
+1. Run: `bundle exec figaro install`
+1. In the `app/config/application.yml` file add you API keys:
   - `UNSPLASH_API_KEY: add_api_key_here`
   - `OPENAI_API_KEY: add_api_key_here`
-8. Inspect the `/db/schema.rb` and compare to the 'Schema' section below to ensure migration has been done successfully
-9. Run: `rails s`
-10. Visit http://localhost:3000/
+1. Inspect the `/db/schema.rb` and compare to the 'Schema' section below to ensure migration has been done successfully
+1. Run: `rails s`
+1. Visit http://localhost:3000/
 
 <br>
 
@@ -444,17 +444,17 @@ View these endpoints in [Postman] (add link here)
 <!-- Python -->
 <img src=".github/logo_python.jpg" height="30"><a href="https://www.python.org/"><strong> Python Programming Language</strong></a>
 
-<p>- Phase 2: Used as the programming language to build microservices.</p><br>
+<p>- Phase 3: Used as the programming language to build microservices.</p><br>
 
 <!-- Django -->
 <img src=".github/logo_django.jpg" height="30"><a href="https://www.djangoproject.com/"><strong> Django Web Framework</strong></a>
 
-<p>- Phase 2: Used as the web framework to build microservices.</p><br>
+<p>- Phase 3: Used as the web framework to build microservices.</p><br>
 
 <!-- Twilio / Sendgrid -->
 <img src=".github/logo_twilio_sendgrid.jpg" height="28"><a href="https://sendgrid.com/"><strong> Twilio/Sendgrid Email Service</strong></a>
 
-<p>- Phase 2: Used to allow users to email themselves a copy of their completed challenge.</p>
+<p>- Phase 3: Used to allow users to email themselves a copy of their completed challenge.</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
