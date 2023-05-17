@@ -444,17 +444,17 @@ View these endpoints in [Postman] (add link here)
 <!-- Python -->
 <img src=".github/logo_python.jpg" height="30"><a href="https://www.python.org/"><strong> Python Programming Language</strong></a>
 
-<p>- Phase 2: Used as the programming language to build microservices.</p><br>
+<p>- Phase 3: Used as the programming language to build microservices.</p><br>
 
 <!-- Django -->
 <img src=".github/logo_django.jpg" height="30"><a href="https://www.djangoproject.com/"><strong> Django Web Framework</strong></a>
 
-<p>- Phase 2: Used as the web framework to build microservices.</p><br>
+<p>- Phase 3: Used as the web framework to build microservices.</p><br>
 
 <!-- Twilio / Sendgrid -->
 <img src=".github/logo_twilio_sendgrid.jpg" height="28"><a href="https://sendgrid.com/"><strong> Twilio/Sendgrid Email Service</strong></a>
 
-<p>- Phase 2: Used to allow users to email themselves a copy of their completed challenge.</p>
+<p>- Phase 3: Used to allow users to email themselves a copy of their completed challenge.</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
