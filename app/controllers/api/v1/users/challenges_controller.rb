@@ -19,7 +19,7 @@ class Api::V1::Users::ChallengesController < ApplicationController
     # this method/helpers will call the OpenAI service, clean the data, update the two new 'Sentences', and return an object as per the JSON contract
     # it all might look like this: 
 
-    # updated_challenge = OpenaiFacade.method_name_here
+    # updated_challenge = OpenaiFacade.method_name_here(new_challenge)
     # render json: ChallengeSerializer.new(updated_challenge)
   end
 
