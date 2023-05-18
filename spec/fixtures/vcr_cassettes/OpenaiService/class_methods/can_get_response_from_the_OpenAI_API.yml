@@ -1,0 +1,82 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"I am
+        trying to learn Turkish. This sentence uses the grammar belirsiz geçmiş zaman
+        (-miş) and the verb (i) bilmek: ''Hindistan''ı ziyaret ettiği için, bir fili
+        binmeyi bilmiş.''. Correct this sentence if it''s wrong and explain what you
+        changed. This sentence uses the grammar zarf fiili (erek/arak) and the verb
+        (i) bilmek: ''Filleri çok şey bilerek, hayvanat bahçesin işini alabildim.''.
+        Correct this sentence if it''s wrong and explain what you changed. Format
+        the output in JSON with parameters correction1, explanation1, correction2,
+        explanation2."}],"temperature":0.7,"max_tokens":600}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer OPENAI_API_KEY
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 18 May 2023 04:50:41 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - user-qevwwrxhbj9zc0sjo1vddlts
+      Openai-Processing-Ms:
+      - '10296'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '3'
+      X-Ratelimit-Limit-Tokens:
+      - '40000'
+      X-Ratelimit-Remaining-Requests:
+      - '2'
+      X-Ratelimit-Remaining-Tokens:
+      - '39260'
+      X-Ratelimit-Reset-Requests:
+      - 20s
+      X-Ratelimit-Reset-Tokens:
+      - 1.11s
+      X-Request-Id:
+      - 447061f9b7c36816ddf63adb417c8249
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 7c917acdcb0c2909-DEN
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpZCI6ImNoYXRjbXBsLTdIUHNzQ1dCMlk2NFRIVzZnZ1QxOGx1MGhKYlVYIiwib2JqZWN0IjoiY2hhdC5jb21wbGV0aW9uIiwiY3JlYXRlZCI6MTY4NDM4NTQzMCwibW9kZWwiOiJncHQtMy41LXR1cmJvLTAzMDEiLCJ1c2FnZSI6eyJwcm9tcHRfdG9rZW5zIjoxNTgsImNvbXBsZXRpb25fdG9rZW5zIjoyMzAsInRvdGFsX3Rva2VucyI6Mzg4fSwiY2hvaWNlcyI6W3sibWVzc2FnZSI6eyJyb2xlIjoiYXNzaXN0YW50IiwiY29udGVudCI6IntcbiAgXCJjb3JyZWN0aW9uMVwiOiBcIkhpbmRpc3RhbifEsSB6aXlhcmV0IGV0dGnEn2kgacOnaW4sIGJpciBmaWxpIGJpbm1leWkgw7bEn3Jlbm1pxZ8uXCIsXG4gIFwiZXhwbGFuYXRpb24xXCI6IFwiVGhlIHVzZSBvZiAnYmlsbWVrJyBpbmRpY2F0ZXMgcHJpb3Iga25vd2xlZGdlIG9yIGFiaWxpdHksIHdoZXJlYXMgdGhlIHVzZSBvZiAnw7bEn3Jlbm1laycgaW5kaWNhdGVzIGxlYXJuaW5nIG9yIGFjcXVpcmluZyBhIG5ldyBza2lsbC4gSW4gdGhpcyBjb250ZXh0LCBpdCBtYWtlcyBtb3JlIHNlbnNlIHRvIHVzZSAnw7bEn3Jlbm1laycgYXMgdGhlIHNlbnRlbmNlIGltcGxpZXMgdGhhdCB0aGUgcGVyc29uIGxlYXJuZWQgdG8gcmlkZSBhbiBlbGVwaGFudCBkdXJpbmcgdGhlaXIgdmlzaXQgdG8gSW5kaWEuXCIsXG4gIFwiY29ycmVjdGlvbjJcIjogXCJGaWxsZXJpIMOnb2sgaXlpIHRhbsSxZMSxxJ/EsW0gacOnaW4sIGhheXZhbmF0IGJhaMOnZXNpbmRlIGnFn2kgYWxhYmlsZGltLlwiLFxuICBcImV4cGxhbmF0aW9uMlwiOiBcIlRoZSB1c2Ugb2YgJ2JpbGVyZWsnIGluZGljYXRlcyBkb2luZyBzb21ldGhpbmcgaW50ZW50aW9uYWxseSBvciBrbm93aW5nbHksIHdoZXJlYXMgdGhlIHNlbnRlbmNlIGltcGxpZXMgdGhhdCB0aGUgcGVyc29uIHdhcyBhYmxlIHRvIGdldCB0aGUgam9iIGR1ZSB0byB0aGVpciBrbm93bGVkZ2Ugb3IgZmFtaWxpYXJpdHkgd2l0aCBlbGVwaGFudHMuIFRoZXJlZm9yZSwgaXQgbWFrZXMgbW9yZSBzZW5zZSB0byB1c2UgJ3RhbsSxbWFrJyB3aGljaCBtZWFucyAndG8ga25vdycgaW4gdGhpcyBjb250ZXh0LiBBbHNvLCAnacWfaW5pJyBzaG91bGQgYmUgY29ycmVjdGVkIHRvICdpxZ9pbmknIHRvIG1hdGNoIHRoZSBjb3JyZWN0IGZvcm0gb2YgdGhlIG5vdW4uXCJcbn0ifSwiZmluaXNoX3JlYXNvbiI6InN0b3AiLCJpbmRleCI6MH1dfQo=
+  recorded_at: Thu, 18 May 2023 04:50:41 GMT
+recorded_with: VCR 6.1.0
