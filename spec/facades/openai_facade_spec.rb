@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe OpenaiFacade, :vcr do
-  describe "instance methods" do
+  describe "class methods" do
     before(:each) do
       @turkish_user = User.create(id: 55, name: "Deniz", preferred_lang: "Turkish")
 
@@ -10,8 +10,16 @@ RSpec.describe OpenaiFacade, :vcr do
       @tr_sentence2 = Sentence.create(id: 11, challenge_id: 50, grammar_point: "olumsuz geçmiş zaman (-me/-ma + di/-tı)", eng_grammar_point: "negative past tense", user_sent: "Dün havalimana gittik ama arkadaşım uçak gelmedi.", ai_sent: "Dün havalimanına gittik, ancak arkadaşımızın uçağı gelmedi.")
     end
 
-    it "can #srub_response" do
-        expect(OpenaiFacade.scrub_response(@tr_challenge1)).to be_a(Hash)
+    it "can :srub_response" do
+      scrubbed_ai_data = OpenaiFacade.scrub_response(@tr_challenge1)
+      expect(scrubbed_ai_data).to be_a(Hash)
+      expect(scrubbed_ai_data.keys).to eq([:correction1, :explanation1, :correction2, :explanation2])
+    end
+
+    xit "can :check_challenge_with_ai" do
+    end
+
+    xit "can :update_sentences" do
     end
   end
 end
