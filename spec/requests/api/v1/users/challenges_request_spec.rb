@@ -82,8 +82,12 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
         headers = { 'CONTENT_TYPE' => 'application/json' }
         post "/api/v1/users/#{@turkish_user.id}/challenges", headers:, params: JSON.generate(challenge_params)
 
-        # expect(response).to be_successful
-        # parsed_data = JSON.parse(response.body, symbolize_names: true)
+        expect(response).to be_successful
+        parsed_data = JSON.parse(response.body, symbolize_names: true)
+
+        require 'pry'; binding.pry
+        # this is now returning an ENTIRE sentence object and DOES NOT match the JSON Contract!!
+        # Will need to 1. Update Method/Make Poro? OR 2. Talk with FE and change JSON contract.
       end
     end
 
