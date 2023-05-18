@@ -45,7 +45,7 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
     end
   end
   
-  describe "create" do #do we need to add VCR here? 
+  describe "create" do  
     before(:each) do
       @turkish_user = User.create(id: 55, name: "Deniz", preferred_lang: "Turkish")
 
@@ -84,10 +84,19 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
 
         expect(response).to be_successful
         parsed_data = JSON.parse(response.body, symbolize_names: true)
+        
+        expect(parsed_data).to be_a Hash
 
-        # require 'pry'; binding.pry
-        # this is now returning an ENTIRE sentence object and DOES NOT match the JSON Contract!!
-        # Will need to 1. Update Method/Make Poro? OR 2. Talk with FE and change JSON contract.
+        expect(parsed_data).to have_key(:data)
+        expect(parsed_data[:data]).to be_a Hash
+
+        expect(parsed_data[:data]).to have_key(:id)
+        expect(parsed_data[:data][:id]).to be_a String
+
+        expect(parsed_data[:data]).to have_key(:type)
+        expect(parsed_data[:data][:type]).to be_a String
+
+        expect(parsed_data[:data]).to_not have_key(:attributes)
       end
     end
 
