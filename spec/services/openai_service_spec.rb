@@ -16,9 +16,7 @@ RSpec.describe OpenaiService, :vcr do
       response = OpenaiService.get_response(@challenge)
    
       expect(response).to be_a(Hash)
-      expect(response.keys).to eq([:id, :object, :created, :model, :usage, :choices])
-      expect(response[:choices].first.keys).to eq([:message, :finish_reason, :index])
-      expect(response[:choices].first[:message][:content]).to be_a(String)
+      expect(response.keys).to eq([:correction1, :explanation1, :correction2, :explanation2])
     end
   end
 end

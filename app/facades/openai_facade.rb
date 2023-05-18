@@ -5,11 +5,9 @@ class OpenaiFacade
     @openai = OpenaiService.new
   end
 
-  def self.sort_response(response)
-    manipulated_response = response[:choices].first[:message][:content]
-    manipulated_response = manipulated_response[1..-2]
-    manipulated_response = manipulated_response.split(". ")
-    manipulated_response = manipulated_response.map(&:strip)
-    require 'pry'; binding.pry
+  def self.sort_response(content)
+    # content = response[:choices].first[:message][:content]
+    x = content.delete("\n")
+    JSON.parse(x, symbolize_names: true)
   end
 end
