@@ -14,17 +14,7 @@ class OpenaiService
     }
     response = get_url(payload)
     content = response[:choices].first[:message][:content]
-    # x = content.delete("\n")
-    # JSON.parse(x, symbolize_names: true)
-    # x.slice!(-2)
-    # require 'pry'; binding.pry
-    # content = content[1..-2] # Remove the brackets at the start and end
-    # content = content.split(",,") # Split the string into an array based on commas
-    # content = content.map(&:strip) # Remove leading and trailing whitespace from each array element
-    # content
   end
-
-  private
 
   def self.conn
     Faraday.new(url: 'https://api.openai.com/v1/chat/completions')

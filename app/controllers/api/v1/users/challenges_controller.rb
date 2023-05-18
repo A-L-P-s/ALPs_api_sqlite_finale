@@ -3,7 +3,7 @@ class Api::V1::Users::ChallengesController < ApplicationController
 
   def new
     prompt_info = UnsplashFacade.new(params).prompt_data
-    render json: ChallengeSerializer.new(prompt_info)
+    render json: PromptSerializer.new(prompt_info)
   end
 
   def create

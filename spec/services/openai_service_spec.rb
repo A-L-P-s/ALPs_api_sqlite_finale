@@ -14,9 +14,8 @@ RSpec.describe OpenaiService, :vcr do
   describe "class methods" do
     it "can #get_response from the OpenAI API" do
       response = OpenaiService.get_response(@challenge)
-   
-      expect(response).to be_a(Hash)
-      expect(response.keys).to eq([:correction1, :explanation1, :correction2, :explanation2])
+
+      expect(response).to be_a(String)
     end
   end
 end

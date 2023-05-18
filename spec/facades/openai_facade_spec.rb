@@ -2,25 +2,16 @@ require "rails_helper"
 
 RSpec.describe OpenaiFacade, :vcr do
   describe "instance methods" do
-    it "can #sort_response" do
-      info = {
-          :id=>"chatcmpl-7HHPVrG7enJ7v9rW6P8z5hKFXuURH",
-          :object=>"chat.completion",
-          :created=>1684352857,
-          :model=>"gpt-3.5-turbo-0301",
-          :usage=>{:prompt_tokens=>183, :completion_tokens=>159, :total_tokens=>342},
-          :choices=>
-          [{:message=>
-              {:role=>"assistant",
-              :content=>
-                "{\n  sentence_1: \"Hindistan'ı ziyaret ettiği için, bir fili binmeyi bilmış.\",\n  sentence_2: \"Filleri çok şey öğrenerek, hayvanat bahçesinde işi aldım.\",\n  explanation_1: \"Changed the verb form of 'bilmek' from '-miş' to the simple present tense 'öğrenmek' with the suffix -erek to use the zarf fiili.\",\n  explanation_2: \"Corrected the sentence by changing the verb from '-miş' to 'öğrenerek' and adding '-de' suffix to 'hayvanat bahçesi' to indicate the location. Also, changed the word order slightly.\"\n}"},
-            :finish_reason=>"stop",
-            :index=>0
-            }
-          ]
-        }
+    before(:each) do
+      @turkish_user = User.create(id: 55, name: "Deniz", preferred_lang: "Turkish")
 
-        expect(OpenaiFacade.sort_response(info)).to be_a(Hash)
+      @tr_challenge1 = Challenge.create(id: 50, user_id: 55, language: "Turkish", verb: "(e/a) gitmek", eng_verb: "to go", image_url: "https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80", image_alt_text: "Plane flying")
+      @tr_sentence1 = Sentence.create(id: 10, challenge_id: 50, grammar_point: "gelecek zaman (-ecek)", eng_grammar_point: "future tense", user_sent: "Yarın annem beni havalimanına bırakmak için araba kullanacak.", ai_sent: "Yarın annem beni havalimanına bırakmak için araba kullanacak.")
+      @tr_sentence2 = Sentence.create(id: 11, challenge_id: 50, grammar_point: "olumsuz geçmiş zaman (-me/-ma + di/-tı)", eng_grammar_point: "negative past tense", user_sent: "Dün havalimana gittik ama arkadaşım uçak gelmedi.", ai_sent: "Dün havalimanına gittik, ancak arkadaşımızın uçağı gelmedi.")
+    end
+
+    it "can #srub_response" do
+        expect(OpenaiFacade.scrub_response(@tr_challenge1)).to be_a(Hash)
     end
   end
 end

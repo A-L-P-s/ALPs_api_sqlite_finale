@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.unsplash.com/photos/random?client_id=UNSPLASH_API_KEY&count=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - Cowboy
+      Content-Type:
+      - application/json
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
+      Cache-Control:
+      - private,max-age=0,stale-if-error=3600,stale-while-revalidate=0
+      X-Unsplash-Version:
+      - v1
+      X-Powered-By:
+      - hero-app
+      Content-Language:
+      - en
+      Etag:
+      - W/"af3203fb32b479737eeebb6d838ec215"
+      X-Ratelimit-Limit:
+      - '50'
+      X-Ratelimit-Remaining:
+      - '48'
+      X-Request-Id:
+      - bd5556cf-f0be-4373-8733-64b86d26edb6
+      X-Runtime:
+      - '0.028000'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Via:
+      - 1.1 vegur, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Thu, 18 May 2023 05:45:18 GMT
+      X-Served-By:
+      - cache-iad-kjyo7100065-IAD, cache-den8231-DEN
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Timer:
+      - S1684388718.206681,VS0,VE77
+      Vary:
+      - Accept-Encoding,Authorization,Accept-Language,Accept
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":"iNZDLwTX0rU","slug":"iNZDLwTX0rU","created_at":"2022-09-12T20:14:29Z","updated_at":"2023-04-29T06:46:34Z","promoted_at":"2023-04-27T13:26:51Z","width":4096,"height":2732,"color":"#404040","blur_hash":"LA96~[Rj0L-nEismxZS50MX8-pM{","description":null,"alt_description":"Woman
+        sitting near bonfire at picnic in the mountains, inside view from a car trunk.
+        Camping and vacation in the mountains alone, travel by car concept","urls":{"raw":"https://plus.unsplash.com/premium_photo-1663013666806-d515882eaa30?ixid=M3w0NDgxNjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODQzODg3MTh8\u0026ixlib=rb-4.0.3","full":"https://plus.unsplash.com/premium_photo-1663013666806-d515882eaa30?crop=entropy\u0026cs=srgb\u0026fm=jpg\u0026ixid=M3w0NDgxNjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODQzODg3MTh8\u0026ixlib=rb-4.0.3\u0026q=85","regular":"https://plus.unsplash.com/premium_photo-1663013666806-d515882eaa30?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=M3w0NDgxNjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODQzODg3MTh8\u0026ixlib=rb-4.0.3\u0026q=80\u0026w=1080","small":"https://plus.unsplash.com/premium_photo-1663013666806-d515882eaa30?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=M3w0NDgxNjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODQzODg3MTh8\u0026ixlib=rb-4.0.3\u0026q=80\u0026w=400","thumb":"https://plus.unsplash.com/premium_photo-1663013666806-d515882eaa30?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=M3w0NDgxNjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODQzODg3MTh8\u0026ixlib=rb-4.0.3\u0026q=80\u0026w=200","small_s3":"https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/unsplash-premium-photos-production/premium_photo-1663013666806-d515882eaa30"},"links":{"self":"https://api.unsplash.com/photos/iNZDLwTX0rU","html":"https://unsplash.com/photos/iNZDLwTX0rU","download":"https://unsplash.com/photos/iNZDLwTX0rU/download?ixid=M3w0NDgxNjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODQzODg3MTh8","download_location":"https://api.unsplash.com/photos/iNZDLwTX0rU/download?ixid=M3w0NDgxNjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODQzODg3MTh8"},"likes":15,"liked_by_user":false,"current_user_collections":[],"sponsorship":null,"topic_submissions":{},"user":{"id":"9PWGki5WCGs","updated_at":"2023-05-11T20:43:03Z","username":"gettyimages","name":"Getty
+        Images","first_name":"Getty Images","last_name":null,"twitter_username":null,"portfolio_url":"https://gettyimages.com","bio":"Move
+        the world","location":null,"links":{"self":"https://api.unsplash.com/users/gettyimages","html":"https://unsplash.com/it/@gettyimages","photos":"https://api.unsplash.com/users/gettyimages/photos","likes":"https://api.unsplash.com/users/gettyimages/likes","portfolio":"https://api.unsplash.com/users/gettyimages/portfolio","following":"https://api.unsplash.com/users/gettyimages/following","followers":"https://api.unsplash.com/users/gettyimages/followers"},"profile_image":{"small":"https://images.unsplash.com/profile-1661537276190-b27bf63fd940image?ixlib=rb-4.0.3\u0026crop=faces\u0026fit=crop\u0026w=32\u0026h=32","medium":"https://images.unsplash.com/profile-1661537276190-b27bf63fd940image?ixlib=rb-4.0.3\u0026crop=faces\u0026fit=crop\u0026w=64\u0026h=64","large":"https://images.unsplash.com/profile-1661537276190-b27bf63fd940image?ixlib=rb-4.0.3\u0026crop=faces\u0026fit=crop\u0026w=128\u0026h=128"},"instagram_username":null,"total_collections":12,"total_likes":0,"total_photos":132616,"accepted_tos":false,"for_hire":false,"social":{"instagram_username":null,"portfolio_url":"https://gettyimages.com","twitter_username":null,"paypal_email":null}},"exif":{"make":null,"model":null,"name":null,"exposure_time":null,"aperture":null,"focal_length":null,"iso":null},"location":{"name":null,"city":null,"country":null,"position":{"latitude":null,"longitude":null}},"views":0,"downloads":0}]'
+  recorded_at: Thu, 18 May 2023 05:45:18 GMT
+recorded_with: VCR 6.1.0

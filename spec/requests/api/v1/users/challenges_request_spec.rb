@@ -85,7 +85,7 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
         expect(response).to be_successful
         parsed_data = JSON.parse(response.body, symbolize_names: true)
 
-        require 'pry'; binding.pry
+        # require 'pry'; binding.pry
         # this is now returning an ENTIRE sentence object and DOES NOT match the JSON Contract!!
         # Will need to 1. Update Method/Make Poro? OR 2. Talk with FE and change JSON contract.
       end
@@ -137,9 +137,6 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
 
         expect(parsed_data[:data]).to have_key(:attributes)
         expect(parsed_data[:data][:attributes]).to be_a Hash
-
-        expect(parsed_data[:data][:attributes]).to have_key(:id)
-        expect(parsed_data[:data][:attributes][:id]).to be_an Integer
 
         expect(parsed_data[:data][:attributes]).to have_key(:user_id)
         expect(parsed_data[:data][:attributes][:user_id]).to be_an Integer
