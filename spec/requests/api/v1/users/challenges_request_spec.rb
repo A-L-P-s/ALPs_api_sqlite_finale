@@ -197,7 +197,7 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
         expect(parsed_data[:data][:attributes]).to be_a Hash
 
         expect(parsed_data[:data][:attributes]).to have_key(:user_id)
-        expect(parsed_data[:data][:attributes][:user_id]).to be_an Integer
+        expect(parsed_data[:data][:attributes][:user_id]).to be_a String
 
         expect(parsed_data[:data][:attributes]).to have_key(:language)
         expect(parsed_data[:data][:attributes][:language]).to be_a String
