@@ -15,6 +15,7 @@ RSpec.describe OpenaiFacade, :vcr do
 
     it "can :srub_response" do
       scrubbed_ai_data = OpenaiFacade.scrub_response(@tr_challenge1)
+      sleep(30)
       expect(scrubbed_ai_data).to be_a(Hash)
       expect(scrubbed_ai_data.keys).to eq([:correction1, :explanation1, :correction2, :explanation2])
     end
@@ -23,6 +24,7 @@ RSpec.describe OpenaiFacade, :vcr do
       expect(@tr_challenge1.sentences[0].ai_sent).to eq(nil)
       expect(@tr_challenge1.sentences[0].ai_explanation).to eq(nil)
       OpenaiFacade.check_challenge_with_ai(@tr_challenge1)
+      sleep(30)
       expect(@tr_challenge1.sentences[0].ai_sent).to_not eq(nil)
       expect(@tr_challenge1.sentences[0].ai_explanation).to_not eq(nil)
     end
