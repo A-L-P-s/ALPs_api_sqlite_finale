@@ -54,7 +54,7 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
     end
   end
 
-  describe "create" do
+  describe "#create" do
     before(:each) do
       @turkish_user = User.create(id: 55, name: "Deniz", preferred_lang: "Turkish")
 
