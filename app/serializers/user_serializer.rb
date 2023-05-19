@@ -1,5 +1,5 @@
 class UserSerializer
   include JSONAPI::Serializer
   set_type :user
-  attributes :name, :preferred_lang, :challenges 
+  attributes :name, :preferred_lang, :challenges
 end

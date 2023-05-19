@@ -5,11 +5,12 @@ class UnsplashService
   end
 
   private
-  def conn 
+
+  def conn
     Faraday.new(url: "https://api.unsplash.com/photos/random") do |faraday|
       faraday.params["client_id"] = ENV["UNSPLASH_API_KEY"]
       faraday.params["count"] = 1
-      #can add more if needed
+      # can add more if needed
     end
   end
 end

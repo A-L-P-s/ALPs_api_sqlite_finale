@@ -21,6 +21,5 @@ RSpec.describe GrammarPoint, type: :model do
 
       expect(GrammarPoint.grammar_points_by("Turkish")).to eq([@turk_gram1, @turk_gram2, @turk_gram3])
     end
-
   end
 end

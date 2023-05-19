@@ -93,8 +93,8 @@ User.create(id: 55, name: "Deniz", preferred_lang: "Turkish")
 #### Challenges & Sentences ####
 Challenge.create(id: 50, user_id: 55, language: "Turkish", verb: "(e/a) gitmek", eng_verb: "to go",
                  image_url: "https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80", image_alt_text: "Plane flying")
-Sentence.create(id: 10, challenge_id: 50, grammar_point: "gelecek zaman (-ecek)", eng_grammar_point: "future tense", user_sent: "Yarın annem beni havalimanına bırakmak için araba kullanacak.",
-                ai_sent: "Yarın annem beni havalimanına bırakmak için araba kullanacak.")
+Sentence.create(id: 10, challenge_id: 50, grammar_point: "gelecek zaman (-ecek)", eng_grammar_point: "future tense", user_sent: "Yarın annem beni tatile bırakmak için havalimanına gidecek.",
+                ai_sent: "Yarın annem beni tatile bırakmak için havalimanına gidecek.")
 Sentence.create(id: 11, challenge_id: 50, grammar_point: "olumsuz geçmiş zaman (-me/-ma + di/-tı)", eng_grammar_point: "negative past tense",
                 user_sent: "Dün havalimana gittik ama arkadaşım uçak gelmedi.", ai_sent: "Dün havalimanına gittik, ancak arkadaşımızın uçağı gelmedi.")
 
@@ -105,11 +105,14 @@ Sentence.create(id: 12, challenge_id: 51, grammar_point: "belirsiz geçmiş zama
 Sentence.create(id: 13, challenge_id: 51, grammar_point: "zarf fiili (erek/arak)", eng_grammar_point: "adverbial participle",
                 user_sent: "Filleri çok şey bilerek, hayvanat bahçesin işini alabildim.", ai_sent: "Filler hakkında çok şey bilerek, hayvanat bahçesinde işi alabildim.")
 
-Challenge.create(id: 52, user_id: 1, language: "Turkish", verb: "(e/a) aldırmamak", eng_verb: "to ignore", image_url: "https://images.unsplash.com/photo-1681477492304-374921480d2e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80", image_alt_text: "holding a cappuccino")
-Sentence.create(id: 14, challenge_id: 52, grammar_point: "ulaçlar amaç (-mek için)", eng_grammar_point: "in order to", user_sent: "Nişanlısının ailesini etkilemek için tuzlu kahveyi aldırmadı.", ai_sent: "Nişanlısının ailesini etkilemek için tuzlu kahveyi aldırmadı.")
-Sentence.create(id: 15, challenge_id: 52, grammar_point: "şimdiki zaman resmi (-mekte)", eng_grammar_point: "formal present/present continuous tense", user_sent: "Kahveyi içerken etrafındaki herkesi aldırmamakta.", ai_sent: "Kahve içerken etrafındaki herkese aldırmamakta.")
+Challenge.create(id: 52, user_id: 55, language: "Turkish", verb: "(e/a) aldırmamak", eng_verb: "to ignore",
+                 image_url: "https://images.unsplash.com/photo-1681477492304-374921480d2e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80", image_alt_text: "holding a cappuccino")
+Sentence.create(id: 14, challenge_id: 52, grammar_point: "ulaçlar amaç (-mek için)", eng_grammar_point: "in order to", user_sent: "Nişanlısının ailesini etkilemek için tuzlu kahveyi aldırmadı.",
+                ai_sent: "Nişanlısının ailesini etkilemek için tuzlu kahveyi aldırmadı.")
+Sentence.create(id: 15, challenge_id: 52, grammar_point: "şimdiki zaman resmi (-mekte)", eng_grammar_point: "formal present/present continuous tense",
+                user_sent: "Kahveyi içerken etrafındaki herkesi aldırmamakta.", ai_sent: "Kahve içerken etrafındaki herkese aldırmamakta.")
 
-Challenge.create(id: 53, user_id: 1, language: "Turkish", verb: "(den/dan) etkilenmek", eng_verb: "to be influenced by",
+Challenge.create(id: 53, user_id: 55, language: "Turkish", verb: "(den/dan) etkilenmek", eng_verb: "to be influenced by",
                  image_url: "https://images.unsplash.com/photo-1682080307124-22e3e0bbc141?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80", image_alt_text: "experimental galaxy and ocean")
 Sentence.create(id: 16, challenge_id: 53, grammar_point: "olumlu geçmiş zaman (-di/-tı)", eng_grammar_point: "positive past tense", user_sent: "Yakamozdan etkilendim",
                 ai_sent: "Yakamozdan etkilendim")
