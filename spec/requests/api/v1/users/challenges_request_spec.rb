@@ -6,17 +6,26 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
       @turkish_user = User.create(id: 55, name: "Deniz", preferred_lang: "Turkish")
       @spanish_user = User.create(id: 1, name: "Alexis", preferred_lang: "Spanish")
 
-      @tr_challenge1 = Challenge.create(id: 50, user_id: 55, language: "Turkish", verb: "(e/a) gitmek", eng_verb: "to go", image_url: "https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80", image_alt_text: "Plane flying")
-      @tr_sentence1 = Sentence.create(id: 10, challenge_id: 50, grammar_point: "gelecek zaman (-ecek)", eng_grammar_point: "future tense", user_sent: "Yarın annem beni havalimanına bırakmak için araba kullanacak.", ai_sent: "Yarın annem beni havalimanına bırakmak için araba kullanacak.")
-      @tr_sentence2 = Sentence.create(id: 11, challenge_id: 50, grammar_point: "olumsuz geçmiş zaman (-me/-ma + di/-tı)", eng_grammar_point: "negative past tense", user_sent: "Dün havalimana gittik ama arkadaşım uçak gelmedi.", ai_sent: "Dün havalimanına gittik, ancak arkadaşımızın uçağı gelmedi.")
+      @tr_challenge1 = Challenge.create(id: 50, user_id: 55, language: "Turkish", verb: "(e/a) gitmek", eng_verb: "to go",
+                                        image_url: "https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80", image_alt_text: "Plane flying")
+      @tr_sentence1 = Sentence.create(id: 10, challenge_id: 50, grammar_point: "gelecek zaman (-ecek)", eng_grammar_point: "future tense",
+                                      user_sent: "Yarın annem beni havalimanına bırakmak için araba kullanacak.", ai_sent: "Yarın annem beni havalimanına bırakmak için araba kullanacak.")
+      @tr_sentence2 = Sentence.create(id: 11, challenge_id: 50, grammar_point: "olumsuz geçmiş zaman (-me/-ma + di/-tı)", eng_grammar_point: "negative past tense",
+                                      user_sent: "Dün havalimana gittik ama arkadaşım uçak gelmedi.", ai_sent: "Dün havalimanına gittik, ancak arkadaşımızın uçağı gelmedi.")
 
-      @tr_challenge2 = Challenge.create(id: 51, user_id: 55, language: "Turkish", verb: "(i) bilmek", eng_verb: "to know", image_url: "https://images.unsplash.com/photo-1525616332682-f763cf05c55e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80", image_alt_text: "Ganesha")
-      @tr_sentence3 = Sentence.create(id: 12, challenge_id: 51, grammar_point: "belirsiz geçmiş zaman (-miş)", eng_grammar_point: "evidential past tense", user_sent: "Hindistan'ı ziyaret ettiği için, bir fili binmeyi bilmiş.", ai_sent: "Hindistan'ı ziyaret ettiği için, bir fili binmeyi bilmiş.")
-      @tr_sentence4 = Sentence.create(id: 13, challenge_id: 51, grammar_point: "zarf fiili (erek/arak)", eng_grammar_point: "adverbial participle", user_sent: "Filleri çok şey bilerek, hayvanat bahçesin işini alabildim.", ai_sent: "Filler hakkında çok şey bilerek, hayvanat bahçesinde işi alabildim.")
+      @tr_challenge2 = Challenge.create(id: 51, user_id: 55, language: "Turkish", verb: "(i) bilmek", eng_verb: "to know",
+                                        image_url: "https://images.unsplash.com/photo-1525616332682-f763cf05c55e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80", image_alt_text: "Ganesha")
+      @tr_sentence3 = Sentence.create(id: 12, challenge_id: 51, grammar_point: "belirsiz geçmiş zaman (-miş)", eng_grammar_point: "evidential past tense",
+                                      user_sent: "Hindistan'ı ziyaret ettiği için, bir fili binmeyi bilmiş.", ai_sent: "Hindistan'ı ziyaret ettiği için, bir fili binmeyi bilmiş.")
+      @tr_sentence4 = Sentence.create(id: 13, challenge_id: 51, grammar_point: "zarf fiili (erek/arak)", eng_grammar_point: "adverbial participle",
+                                      user_sent: "Filleri çok şey bilerek, hayvanat bahçesin işini alabildim.", ai_sent: "Filler hakkında çok şey bilerek, hayvanat bahçesinde işi alabildim.")
 
-      @sp_challenge1 = Challenge.create(id: 100, user_id: 1, language: "Spanish", verb: "hablar", eng_verb: "to speak", image_url: "https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80", image_alt_text: "Paris from above")
-      @sp_sentence1 = Sentence.create(id: 40, challenge_id: 100, grammar_point: "presente", eng_grammar_point: "simple present tense", user_sent: "Él habla español y francés con fluidez.", ai_sent: "Él habla español y francés con fluidez.")
-      @sp_sentence2 = Sentence.create(id: 41, challenge_id: 100, grammar_point: "pretérito indefinido", eng_grammar_point: "simple past tense", user_sent: "Mi dos hijos estaban hablo francés al revisor de tren.", ai_sent: "Mis dos hijos estaban hablando francés al revisor del tren.")
+      @sp_challenge1 = Challenge.create(id: 100, user_id: 1, language: "Spanish", verb: "hablar", eng_verb: "to speak",
+                                        image_url: "https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80", image_alt_text: "Paris from above")
+      @sp_sentence1 = Sentence.create(id: 40, challenge_id: 100, grammar_point: "presente", eng_grammar_point: "simple present tense", user_sent: "Él habla español y francés con fluidez.",
+                                      ai_sent: "Él habla español y francés con fluidez.")
+      @sp_sentence2 = Sentence.create(id: 41, challenge_id: 100, grammar_point: "pretérito indefinido", eng_grammar_point: "simple past tense",
+                                      user_sent: "Mi dos hijos estaban hablo francés al revisor de tren.", ai_sent: "Mis dos hijos estaban hablando francés al revisor del tren.")
 
       @turk_verb1 = Verb.create(language: "Turkish", verb: "(le/la) uğraşmak", eng_verb: "to deal with")
       @turk_verb2 = Verb.create(language: "Turkish", verb: "(e/a) gitmek", eng_verb: "to go")
@@ -36,7 +45,7 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
         get "/api/v1/users/#{@turkish_user.id}/challenges/new"
 
         expect(response).to be_successful
-        
+
         parsed_data = JSON.parse(response.body, symbolize_names: true)
         expect(parsed_data).to be_a(Hash)
         expect(parsed_data.keys).to eq([:data])
@@ -44,8 +53,8 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
       end
     end
   end
-  
-  describe "create" do  
+
+  describe "create" do
     before(:each) do
       @turkish_user = User.create(id: 55, name: "Deniz", preferred_lang: "Turkish")
 
@@ -59,32 +68,32 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
 
     describe "when successful" do
       it "creates a new challenge and 2 sentences" do
-       challenge_params = {
+        challenge_params = {
           "language": "Turkish",
           "verb": "(i) gitmek",
           "eng_verb": "to go",
           "image_url": "/random/unplash/image.url",
-          "image_alt_text": "Plane flying over the Bosphorous", 
+          "image_alt_text": "Plane flying over the Bosphorous",
           "sentences": [
             {
-             "grammar_point": "şimdiki zaman (-iyor)",
-             "eng_grammar_point": "present/present continuous tense",
-             "user_sent": "Bu yaz Hopa'ya gidiyorum." #correct sentence
-             },
-             {
-               "grammar_point": "geniş zaman (-ir/-er)",
-               "eng_grammar_point": "simple present tense",
-               "user_sent": "Her yillar biz Ankara'ya giderim." #incorrect sentence
-             }
-           ]
-         }
-        
+              "grammar_point": "şimdiki zaman (-iyor)",
+              "eng_grammar_point": "present/present continuous tense",
+              "user_sent": "Bu yaz Hopa'ya gidiyorum." # correct sentence
+            },
+            {
+              "grammar_point": "geniş zaman (-ir/-er)",
+              "eng_grammar_point": "simple present tense",
+              "user_sent": "Her yillar biz Ankara'ya giderim." # incorrect sentence
+            }
+          ]
+        }
+
         headers = { 'CONTENT_TYPE' => 'application/json' }
         post "/api/v1/users/#{@turkish_user.id}/challenges", headers:, params: JSON.generate(challenge_params)
-        
+
         expect(response).to be_successful
         parsed_data = JSON.parse(response.body, symbolize_names: true)
-        
+
         expect(parsed_data).to be_a Hash
 
         expect(parsed_data).to have_key(:data)
@@ -107,24 +116,24 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
           "verb": "(i) gitmek",
           "eng_verb": "to go",
           "image_url": "/random/unplash/image.url",
-          "image_alt_text": "Plane flying over the Bosphorous", 
+          "image_alt_text": "Plane flying over the Bosphorous",
           "sentences": [
             {
-             "grammar_point": "şimdiki zaman (-iyor)",
-             "eng_grammar_point": "present/present continuous tense",
-             "user_sent": "Bu yaz Hopa'ya gidiyorum." #correct sentence
-             },
-             {
-               "grammar_point": "geniş zaman (-ir/-er)",
-               "eng_grammar_point": "simple present tense",
-               "user_sent": "Her yillar biz Ankara'ya giderim." #incorrect sentence
-             }
-           ]
-         }
-        
+              "grammar_point": "şimdiki zaman (-iyor)",
+              "eng_grammar_point": "present/present continuous tense",
+              "user_sent": "Bu yaz Hopa'ya gidiyorum." # correct sentence
+            },
+            {
+              "grammar_point": "geniş zaman (-ir/-er)",
+              "eng_grammar_point": "simple present tense",
+              "user_sent": "Her yillar biz Ankara'ya giderim." # incorrect sentence
+            }
+          ]
+        }
+
         headers = { 'CONTENT_TYPE' => 'application/json' }
         post "/api/v1/users/76767676/challenges", headers:, params: JSON.generate(challenge_params)
-        
+
         expect(response.status).to eq(404)
 
         parsed_data = JSON.parse(response.body, symbolize_names: true)
@@ -245,17 +254,26 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
       @turkish_user = User.create(id: 55, name: "Deniz", preferred_lang: "Turkish")
       @spanish_user = User.create(id: 1, name: "Alexis", preferred_lang: "Spanish")
 
-      @tr_challenge1 = Challenge.create(id: 50, user_id: 55, language: "Turkish", verb: "(e/a) gitmek", eng_verb: "to go", image_url: "https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80", image_alt_text: "Plane flying")
-      @tr_sentence1 = Sentence.create(id: 10, challenge_id: 50, grammar_point: "gelecek zaman (-ecek)", eng_grammar_point: "future tense", user_sent: "Yarın annem beni havalimanına bırakmak için araba kullanacak.", ai_sent: "Yarın annem beni havalimanına bırakmak için araba kullanacak.")
-      @tr_sentence2 = Sentence.create(id: 11, challenge_id: 50, grammar_point: "olumsuz geçmiş zaman (-me/-ma + di/-tı)", eng_grammar_point: "negative past tense", user_sent: "Dün havalimana gittik ama arkadaşım uçak gelmedi.", ai_sent: "Dün havalimanına gittik, ancak arkadaşımızın uçağı gelmedi.")
+      @tr_challenge1 = Challenge.create(id: 50, user_id: 55, language: "Turkish", verb: "(e/a) gitmek", eng_verb: "to go",
+                                        image_url: "https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80", image_alt_text: "Plane flying")
+      @tr_sentence1 = Sentence.create(id: 10, challenge_id: 50, grammar_point: "gelecek zaman (-ecek)", eng_grammar_point: "future tense",
+                                      user_sent: "Yarın annem beni havalimanına bırakmak için araba kullanacak.", ai_sent: "Yarın annem beni havalimanına bırakmak için araba kullanacak.")
+      @tr_sentence2 = Sentence.create(id: 11, challenge_id: 50, grammar_point: "olumsuz geçmiş zaman (-me/-ma + di/-tı)", eng_grammar_point: "negative past tense",
+                                      user_sent: "Dün havalimana gittik ama arkadaşım uçak gelmedi.", ai_sent: "Dün havalimanına gittik, ancak arkadaşımızın uçağı gelmedi.")
 
-      @tr_challenge2 = Challenge.create(id: 51, user_id: 55, language: "Turkish", verb: "(i) bilmek", eng_verb: "to know", image_url: "https://images.unsplash.com/photo-1525616332682-f763cf05c55e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80", image_alt_text: "Ganesha")
-      @tr_sentence3 = Sentence.create(id: 12, challenge_id: 51, grammar_point: "belirsiz geçmiş zaman (-miş)", eng_grammar_point: "evidential past tense", user_sent: "Hindistan'ı ziyaret ettiği için, bir fili binmeyi bilmiş.", ai_sent: "Hindistan'ı ziyaret ettiği için, bir fili binmeyi bilmiş.")
-      @tr_sentence4 = Sentence.create(id: 13, challenge_id: 51, grammar_point: "zarf fiili (erek/arak)", eng_grammar_point: "adverbial participle", user_sent: "Filleri çok şey bilerek, hayvanat bahçesin işini alabildim.", ai_sent: "Filler hakkında çok şey bilerek, hayvanat bahçesinde işi alabildim.")
+      @tr_challenge2 = Challenge.create(id: 51, user_id: 55, language: "Turkish", verb: "(i) bilmek", eng_verb: "to know",
+                                        image_url: "https://images.unsplash.com/photo-1525616332682-f763cf05c55e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80", image_alt_text: "Ganesha")
+      @tr_sentence3 = Sentence.create(id: 12, challenge_id: 51, grammar_point: "belirsiz geçmiş zaman (-miş)", eng_grammar_point: "evidential past tense",
+                                      user_sent: "Hindistan'ı ziyaret ettiği için, bir fili binmeyi bilmiş.", ai_sent: "Hindistan'ı ziyaret ettiği için, bir fili binmeyi bilmiş.")
+      @tr_sentence4 = Sentence.create(id: 13, challenge_id: 51, grammar_point: "zarf fiili (erek/arak)", eng_grammar_point: "adverbial participle",
+                                      user_sent: "Filleri çok şey bilerek, hayvanat bahçesin işini alabildim.", ai_sent: "Filler hakkında çok şey bilerek, hayvanat bahçesinde işi alabildim.")
 
-      @sp_challenge1 = Challenge.create(id: 100, user_id: 1, language: "Spanish", verb: "hablar", eng_verb: "to speak", image_url: "https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80", image_alt_text: "Paris from above")
-      @sp_sentence1 = Sentence.create(id: 40, challenge_id: 100, grammar_point: "presente", eng_grammar_point: "simple present tense", user_sent: "Él habla español y francés con fluidez.", ai_sent: "Él habla español y francés con fluidez.")
-      @sp_sentence2 = Sentence.create(id: 41, challenge_id: 100, grammar_point: "pretérito indefinido", eng_grammar_point: "simple past tense", user_sent: "Mi dos hijos estaban hablo francés al revisor de tren.", ai_sent: "Mis dos hijos estaban hablando francés al revisor del tren.")
+      @sp_challenge1 = Challenge.create(id: 100, user_id: 1, language: "Spanish", verb: "hablar", eng_verb: "to speak",
+                                        image_url: "https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80", image_alt_text: "Paris from above")
+      @sp_sentence1 = Sentence.create(id: 40, challenge_id: 100, grammar_point: "presente", eng_grammar_point: "simple present tense", user_sent: "Él habla español y francés con fluidez.",
+                                      ai_sent: "Él habla español y francés con fluidez.")
+      @sp_sentence2 = Sentence.create(id: 41, challenge_id: 100, grammar_point: "pretérito indefinido", eng_grammar_point: "simple past tense",
+                                      user_sent: "Mi dos hijos estaban hablo francés al revisor de tren.", ai_sent: "Mis dos hijos estaban hablando francés al revisor del tren.")
 
       @turk_verb1 = Verb.create(language: "Turkish", verb: "(le/la) uğraşmak", eng_verb: "to deal with")
       @turk_verb2 = Verb.create(language: "Turkish", verb: "(e/a) gitmek", eng_verb: "to go")

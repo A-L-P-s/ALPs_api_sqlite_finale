@@ -1,6 +1,6 @@
 class ChallengeSerializer
   include JSONAPI::Serializer
-  attributes :user_id, :language, :verb, :eng_verb, :image_url, :image_alt_text 
+  attributes :user_id, :language, :verb, :eng_verb, :image_url, :image_alt_text
 
   attributes :created_at do |object|
     object.created_at.strftime("%m/%e/%Y")

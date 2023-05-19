@@ -1,5 +1,4 @@
 class OpenaiFacade
-
   def self.check_challenge_with_ai(new_challenge)
     parsed_data = scrub_response(new_challenge)
     # James & Dave

@@ -25,14 +25,15 @@ class Api::V1::Users::ChallengesController < ApplicationController
   end
 
   private
+
   def challenge_params
     params.permit(user_id: params[:user_id], language: params[:language], verb: params[:verb], eng_verb: params[:eng_verb], image_url: params[:image_url], image_alt_text: params[:image_alt_text])
   end
-  
+
   def check_challenge
     @challenge = Challenge.find_by(user_id: params[:user_id], id: params[:id])
-    if @challenge.nil?
-      cant_delete_challenge
-    end
+    return unless @challenge.nil?
+
+    cant_delete_challenge
   end
 end

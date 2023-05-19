@@ -16,7 +16,7 @@ RSpec.describe UnsplashFacade, :vcr do
       @spanish_verb2 = Verb.create(language: "Spanish", verb: "bailar", eng_verb: "to dance")
       @span_gram1 = GrammarPoint.create(language: "Spanish", grammar_point: "presente", eng_grammar_point: "simple present tense")
       @span_gram2 = GrammarPoint.create(language: "Spanish", grammar_point: "pretérito perfecto", eng_grammar_point: "present perfect tense")
-     
+
       @unsplash_facade = UnsplashFacade.new(user_id: @deniz.id)
     end
 
