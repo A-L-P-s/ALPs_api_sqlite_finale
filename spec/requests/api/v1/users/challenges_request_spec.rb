@@ -139,7 +139,7 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
         expect(parsed_data[:errors].first[:status]).to be_a Integer
 
         expect(parsed_data[:errors].first[:detail]).to be_a String
-        expect(parsed_data[:errors].first[:detail]).to eq("Couldn't find Challenge with 'id'=23452345456")
+        expect(parsed_data[:errors].first[:detail]).to eq("Couldn't find User with 'id'=76767676")
       end
     end
   end
