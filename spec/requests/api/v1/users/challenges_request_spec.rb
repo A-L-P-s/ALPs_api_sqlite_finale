@@ -81,7 +81,7 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
         
         headers = { 'CONTENT_TYPE' => 'application/json' }
         post "/api/v1/users/#{@turkish_user.id}/challenges", headers:, params: JSON.generate(challenge_params)
-
+        
         expect(response).to be_successful
         parsed_data = JSON.parse(response.body, symbolize_names: true)
         
@@ -100,8 +100,48 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
       end
     end
 
-    # describe "when NOT successful" do
-    # end
+    describe "when NOT successful" do
+      it 'returns a 404 where user does not exist' do
+        challenge_params = {
+          "language": "Turkish",
+          "verb": "(i) gitmek",
+          "eng_verb": "to go",
+          "image_url": "/random/unplash/image.url",
+          "image_alt_text": "Plane flying over the Bosphorous", 
+          "sentences": [
+            {
+             "grammar_point": "şimdiki zaman (-iyor)",
+             "eng_grammar_point": "present/present continuous tense",
+             "user_sent": "Bu yaz Hopa'ya gidiyorum." #correct sentence
+             },
+             {
+               "grammar_point": "geniş zaman (-ir/-er)",
+               "eng_grammar_point": "simple present tense",
+               "user_sent": "Her yillar biz Ankara'ya giderim." #incorrect sentence
+             }
+           ]
+         }
+        
+        headers = { 'CONTENT_TYPE' => 'application/json' }
+        post "/api/v1/users/76767676/challenges", headers:, params: JSON.generate(challenge_params)
+        
+        expect(response.status).to eq(404)
+
+        parsed_data = JSON.parse(response.body, symbolize_names: true)
+
+        expect(parsed_data).to be_a Hash
+        expect(parsed_data).to have_key(:errors)
+
+        expect(parsed_data[:errors]).to be_an Array
+        expect(parsed_data[:errors].first).to be_a Hash
+
+        expect(parsed_data[:errors].first).to have_key(:status)
+        expect(parsed_data[:errors].first[:status]).to be_a Integer
+
+        expect(parsed_data[:errors].first[:detail]).to be_a String
+        expect(parsed_data[:errors].first[:detail]).to eq("Couldn't find Challenge with 'id'=23452345456")
+      end
+    end
   end
 
   describe "#show" do
