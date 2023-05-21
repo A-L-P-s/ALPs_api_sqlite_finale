@@ -10,7 +10,7 @@ class Api::V1::Users::ChallengesController < ApplicationController
     user = User.find(params[:user_id])
 
     new_challenge = user.challenges.create(challenge_params)
-    new_challenge.create_sentences(params[:sentences])
+    new_challenge.create_sentences(params[:challenge][:sentences])
     updated_challenge = OpenaiFacade.check_challenge_with_ai(new_challenge)
 
     render json: ChallengeIdSerializer.new(updated_challenge), status: :created
@@ -27,7 +27,7 @@ class Api::V1::Users::ChallengesController < ApplicationController
   private
 
   def challenge_params
-    params.permit(user_id: params[:user_id], language: params[:language], verb: params[:verb], eng_verb: params[:eng_verb], image_url: params[:image_url], image_alt_text: params[:image_alt_text])
+    params.require(:challenge).permit(:user_id, :language, :verb, :eng_verb, :image_url, :image_alt_text)
   end
 
   def check_challenge

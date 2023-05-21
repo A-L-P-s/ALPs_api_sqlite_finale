@@ -64,7 +64,7 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
         }
 
         headers = { 'CONTENT_TYPE' => 'application/json' }
-        post "/api/v1/users/#{@turkish_user.id}/challenges", headers:, params: JSON.generate(challenge_params)
+        post "/api/v1/users/#{@turkish_user.id}/challenges", headers:, params: JSON.generate(challenge: challenge_params)
 
         expect(response).to be_successful
         parsed_data = JSON.parse(response.body, symbolize_names: true)
