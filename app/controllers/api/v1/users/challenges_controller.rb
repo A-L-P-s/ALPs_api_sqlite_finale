@@ -27,7 +27,7 @@ class Api::V1::Users::ChallengesController < ApplicationController
   private
 
   def challenge_params
-    params.require(:challenge).permit(:user_id, :language, :verb, :eng_verb, :image_url, :image_alt_text)
+    params.permit(:user_id, :language, :verb, :eng_verb, :image_url, :image_alt_text)
   end
 
   def check_challenge
