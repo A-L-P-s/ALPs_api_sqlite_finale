@@ -1,6 +1,6 @@
 class ChallengeSerializer
   include JSONAPI::Serializer
-  attributes :user_id, :language, :verb, :eng_verb, :image_url, :image_alt_text
+  attributes :language, :verb, :eng_verb, :image_url, :image_alt_text
 
   attributes :user_id do |object|
     object.to_s
@@ -14,7 +14,7 @@ class ChallengeSerializer
     serializer.sentences.map do |sentence|
       {
         id: sentence.id.to_s,
-        grammar_points: sentence.grammar_point,
+        grammar_point: sentence.grammar_point,
         eng_grammar_point: sentence.eng_grammar_point,
         user_sent: sentence.user_sent,
         ai_sent: sentence.ai_sent,
