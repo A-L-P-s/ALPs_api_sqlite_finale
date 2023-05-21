@@ -3,7 +3,7 @@ class ChallengeSerializer
   attributes :language, :verb, :eng_verb, :image_url, :image_alt_text
 
   attributes :user_id do |object|
-    object.to_s
+    object.user_id.to_s
   end
 
   attributes :created_at do |object|
