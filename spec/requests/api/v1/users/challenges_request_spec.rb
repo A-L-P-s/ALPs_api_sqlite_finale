@@ -70,15 +70,10 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
         parsed_data = JSON.parse(response.body, symbolize_names: true)
 
         expect(parsed_data).to be_a Hash
+        expect(parsed_data.keys).to eq([:data])
 
-        expect(parsed_data).to have_key(:data)
         expect(parsed_data[:data]).to be_a Hash
-
-        expect(parsed_data[:data]).to have_key(:id)
-        expect(parsed_data[:data][:id]).to be_a String
-
-        expect(parsed_data[:data]).to have_key(:type)
-        expect(parsed_data[:data][:type]).to be_a String
+        expect(parsed_data[:data].keys).to eq([:id, :type])
 
         expect(parsed_data[:data]).to_not have_key(:attributes)
       end
@@ -120,7 +115,7 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
         expect(parsed_data[:errors].first).to be_a Hash
 
         expect(parsed_data[:errors].first).to have_key(:status)
-        expect(parsed_data[:errors].first[:status]).to be_a Integer
+        expect(parsed_data[:errors].first[:status]).to be_a String
 
         expect(parsed_data[:errors].first[:detail]).to be_a String
         expect(parsed_data[:errors].first[:detail]).to eq("Couldn't find User with 'id'=76767676")
@@ -160,13 +155,15 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
         expect(parsed_data[:data].keys).to eq([:id, :type, :attributes])
 
         expect(parsed_data[:data][:attributes]).to be_a Hash
-        expect(parsed_data[:data][:attributes].keys).to eq([:user_id, 
-                                                            :language, 
-                                                            :verb, :eng_verb, 
+        expect(parsed_data[:data][:attributes].keys).to eq([:language, 
+                                                            :verb, 
+                                                            :eng_verb, 
                                                             :image_url, 
-                                                            :image_alt_text, 
+                                                            :image_alt_text,
+                                                            :user_id, 
                                                             :created_at, 
-                                                            :sentences])
+                                                            :sentences])                                                 
+        expect(parsed_data[:data][:attributes][:user_id]).to be_a String
 
         expect(parsed_data[:data][:attributes][:sentences]).to be_an Array
         expect(parsed_data[:data][:attributes][:sentences][0]).to be_a Hash
@@ -177,6 +174,7 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
                                                                            :user_sent, 
                                                                            :ai_sent, 
                                                                            :ai_explanation])
+        expect(parsed_data[:data][:attributes][:sentences][0][:id]).to be_a String
       end
     end
 
@@ -195,7 +193,7 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
         expect(parsed_data[:errors].first).to be_a Hash
 
         expect(parsed_data[:errors].first).to have_key(:status)
-        expect(parsed_data[:errors].first[:status]).to be_a Integer
+        expect(parsed_data[:errors].first[:status]).to be_a String
 
         expect(parsed_data[:errors].first[:detail]).to be_a String
         expect(parsed_data[:errors].first[:detail]).to eq("Couldn't find Challenge with 'id'=23452345456")

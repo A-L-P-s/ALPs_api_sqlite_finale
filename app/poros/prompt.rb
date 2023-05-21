@@ -3,7 +3,7 @@ class Prompt
 
   def initialize(info)
     @id = nil
-    @user_id = info[:user_id].to_i
+    @user_id = info[:user_id]
     @language = info[:language]
     @verb = info[:verb]
     @eng_verb = info[:eng_verb]

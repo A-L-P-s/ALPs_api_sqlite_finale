@@ -94,7 +94,7 @@ RSpec.describe "Users API", type: :request do
                                       :image_url,
                                       :image_alt_text,
                                       :created_at])
-        expect(challenge[:challenge_id]).to be_an(Integer)
+        expect(challenge[:challenge_id]).to be_an(String)
         expect(challenge[:language]).to eq(@challenge_1.language)
         expect(challenge[:language]).to be_a(String)
         expect(challenge[:verb]).to eq(@challenge_1.verb)
@@ -122,8 +122,8 @@ RSpec.describe "Users API", type: :request do
         expect(parsed_error_data[:errors][0].keys).to eq([:status,
                                                           :title,
                                                           :detail])
-        expect(parsed_error_data[:errors][0][:status]).to be_a(Integer)
-        expect(parsed_error_data[:errors][0][:status]).to eq(404)
+        expect(parsed_error_data[:errors][0][:status]).to be_a(String)
+        expect(parsed_error_data[:errors][0][:status]).to eq("404")
         expect(parsed_error_data[:errors][0][:title]).to be_a(String)
         expect(parsed_error_data[:errors][0][:title]).to eq("ActiveRecord::RecordNotFound")
         expect(parsed_error_data[:errors][0][:detail]).to be_a(String)

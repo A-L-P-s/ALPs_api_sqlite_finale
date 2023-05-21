@@ -5,7 +5,7 @@ class UserSerializer
   attributes :challenges do |serializer|
     serializer.challenges.map do |challenge|
       {
-        challenge_id: challenge.id,
+        challenge_id: challenge.id.to_s,
         language: challenge.language,
         verb: challenge.verb,
         eng_verb: challenge.eng_verb,
