@@ -1,6 +1,6 @@
 class ChallengeSerializer
   include JSONAPI::Serializer
-  attributes :language, :verb, :eng_verb, :image_url, :image_alt_text #:user_id,
+  attributes :language, :verb, :eng_verb, :image_url, :image_alt_text
 
   attributes :user_id do |object|
     object.to_s
