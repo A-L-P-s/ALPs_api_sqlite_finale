@@ -10,7 +10,7 @@ class Api::V1::Users::ChallengesController < ApplicationController
     user = User.find(params[:user_id])
 
     new_challenge = user.challenges.create(challenge_params)
-    new_challenge.create_sentences(params[:challenge][:sentences])
+    new_challenge.create_sentences(params[:sentences])
     updated_challenge = OpenaiFacade.check_challenge_with_ai(new_challenge)
     
     render json: ChallengeIdSerializer.new(updated_challenge), status: :created
