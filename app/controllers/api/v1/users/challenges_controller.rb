@@ -25,6 +25,7 @@ class Api::V1::Users::ChallengesController < ApplicationController
   end
 
   private
+
   def challenge_params
     params.permit(:user_id, :language, :verb, :eng_verb, :image_url, :image_alt_text, sentences: [:grammar_point, :eng_grammar_point, :user_sent])
   end
