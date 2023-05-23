@@ -145,7 +145,6 @@ GrammarPoint.create(language: "Vietnamse", grammar_point: "đang", eng_grammar_p
 GrammarPoint.create(language: "Vietnamse", grammar_point: "bởi vì", eng_grammar_point: "because")
 GrammarPoint.create(language: "Vietnamse", grammar_point: "nếu", eng_grammar_point: "conditional")
 
-
 User.create(id: 10, name: "Hai", preferred_lang: "Vietnamese")
 
 Challenge.create(id: 200, user_id: 10, language: "Vietnamese", verb: "Ăn", eng_verb: "to eat",
