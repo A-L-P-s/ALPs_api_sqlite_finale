@@ -123,3 +123,40 @@ Sentence.create(id: 16, challenge_id: 53, grammar_point: "olumlu geçmiş zaman 
 Sentence.create(id: 17, challenge_id: 53, grammar_point: "ulaçlar sebep (-me/-ma + kişi için)", eng_grammar_point: "because",
                 user_sent: "Denizin güzelliğiden etkilendiği için ay ışığına dans etti.", ai_sent: "Denizin güzelliğinden etkilendiği için ay ışığında dans etti.",
                 ai_explanation: "The original phrase 'güzellikten etkilendiği' would translate to 'affected by beauty', which is nonspecific. The corrected phrase 'güzelliğinden etkilendiği' means 'affected by its beauty', referring specifically to the sea's beauty. I changed 'ay ışığına', 'danced to the moonlight' to 'ay ışığında' which translates to 'danced in the moonlight'.")
+
+Verb.create(language: "Vietnamese", verb: "Đi", eng_verb: "to go")
+Verb.create(language: "Vietnamese", verb: "Làm", eng_verb: "to do")
+Verb.create(language: "Vietnamese", verb: "Học", eng_verb: "to study")
+Verb.create(language: "Vietnamese", verb: "Ăn", eng_verb: "to eat")
+Verb.create(language: "Vietnamese", verb: "Uống", eng_verb: "to drink")
+Verb.create(language: "Vietnamese", verb: "Nói", eng_verb: "to speak")
+Verb.create(language: "Vietnamese", verb: "Đọc", eng_verb: "to read")
+Verb.create(language: "Vietnamese", verb: "Viết", eng_verb: "to write")
+Verb.create(language: "Vietnamese", verb: "Nghe", eng_verb: "to listen")
+Verb.create(language: "Vietnamese", verb: "Chơi", eng_verb: "to play")
+
+GrammarPoint.create(language: "Vietnamse", grammar_point: "hiếm khi", eng_grammar_point: "Adverbs of Time and Frequency")
+GrammarPoint.create(language: "Vietnamse", grammar_point: "ở đâu", eng_grammar_point: "Adverbs of Place")
+GrammarPoint.create(language: "Vietnamse", grammar_point: "của", eng_grammar_point: "Possession")
+GrammarPoint.create(language: "Vietnamse", grammar_point: "rất", eng_grammar_point: "Adjective Intensifiers")
+GrammarPoint.create(language: "Vietnamse", grammar_point: "đã", eng_grammar_point: "past tense")
+GrammarPoint.create(language: "Vietnamse", grammar_point: "sẽ", eng_grammar_point: "future tense")
+GrammarPoint.create(language: "Vietnamse", grammar_point: "đang", eng_grammar_point: "present tense")
+GrammarPoint.create(language: "Vietnamse", grammar_point: "bởi vì", eng_grammar_point: "because")
+GrammarPoint.create(language: "Vietnamse", grammar_point: "nếu", eng_grammar_point: "conditional")
+
+User.create(id: 10, name: "Hai", preferred_lang: "Vietnamese")
+
+Challenge.create(id: 200, user_id: 10, language: "Vietnamese", verb: "Ăn", eng_verb: "to eat",
+  image_url: "https://images.unsplash.com/photo-1682865990641-d897fe51f887?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NDgxNjV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODQ4ODEyMDV8&ixlib=rb-4.0.3&q=80&w=1080", image_alt_text: "a building that has a lot of lights on it")
+Sentence.create(id: 50, challenge_id: 200, grammar_point: "rất", eng_grammar_point: "adjective intensifiers", user_sent: "Tôi ăn rất nhiều.",
+ ai_sent: "Tôi ăn rất nhiều.", ai_explanation: "This sentence is correct. Nice work rockstar!")
+Sentence.create(id: 51, challenge_id: 200, grammar_point: "đang", eng_grammar_point: "present tense", user_sent: "Tôi đang ăn roi.",
+ ai_sent: "Tôi đang ăn cơm.", ai_explanation: "The word 'roi' does not have a clear meaning in this context, and it doesn't fit grammatically in the sentence.")
+
+Challenge.create(id: 201, user_id: 10, language: "Vietnamese", verb: "học", eng_verb: "to study",
+  image_url: "https://images.unsplash.com/photo-1682621034494-2242e054972c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NDgxNjV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODQ4ODE5NDB8&ixlib=rb-4.0.3&q=80&w=1080", image_alt_text: "a fire burning in the middle of a blue sky")
+Sentence.create(id: 52, challenge_id: 201, grammar_point: "đã", eng_grammar_point: "past present tense", user_sent: "Tôi đã học tiếng Anh được 3 năm.",
+ ai_sent: "Tôi đã học tiếng Anh được 3 năm.", ai_explanation: "Correct! You win!")
+Sentence.create(id: 53, challenge_id: 201, grammar_point: "nếu", eng_grammar_point: "conditional", user_sent: "Tôi sẽ học lập trình nếu mẹ cho không phép.",
+ ai_sent: "Tôi sẽ học lập trình nếu mẹ cho phép.", ai_explanation: "If you want to say 'I will study coding if my mom lets me' in Vietnamese, you can use the following sentence: 'Tôi sẽ học lập trình nếu mẹ cho phép.'")
