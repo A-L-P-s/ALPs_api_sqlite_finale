@@ -1,6 +1,6 @@
 class Api::V1::UsersController < ApplicationController
   def index
-    render json: UserSerializer.new(User.all)
+    render json: UserIndexSerializer.new(User.all)
   end
 
   def show

@@ -34,10 +34,9 @@ RSpec.describe "Users API", type: :request do
           expect(user[:type]).to eq("user")
           expect(user).to have_key(:attributes)
           expect(user[:attributes]).to be_an(Hash)
-          expect(user[:attributes].keys).to eq([:name, :preferred_lang, :challenges])
+          expect(user[:attributes].keys).to eq([:name, :preferred_lang])
           expect(user[:attributes][:name]).to be_a(String)
           expect(user[:attributes][:preferred_lang]).to be_a(String)
-          expect(user[:attributes][:challenges]).to be_an(Array)
         end
       end
     end
