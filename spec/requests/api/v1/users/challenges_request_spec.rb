@@ -64,7 +64,7 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
         }
 
         headers = { 'CONTENT_TYPE' => 'application/json' }
-        post "/api/v1/users/#{@turkish_user.id}/challenges", headers: headers, params: JSON.generate(challenge_params)
+        post "/api/v1/users/#{@turkish_user.id}/challenges", headers:, params: JSON.generate(challenge_params)
 
         expect(response).to be_successful
         parsed_data = JSON.parse(response.body, symbolize_names: true)
@@ -103,7 +103,7 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
 
         headers = { 'CONTENT_TYPE' => 'application/json' }
 
-        post "/api/v1/users/76767676/challenges", headers: headers, params: JSON.generate(challenge_params)
+        post "/api/v1/users/76767676/challenges", headers:, params: JSON.generate(challenge_params)
 
         expect(response.status).to eq(404)
 
@@ -128,17 +128,17 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
     before(:each) do
       @verb1 = Verb.create(language: "Spanish", verb: "hablar", eng_verb: "to speak")
       @verb2 = Verb.create(language: "Spanish", verb: "bailar", eng_verb: "to dance")
-      
+
       @point1 = GrammarPoint.create(language: "Spanish", grammar_point: "presente", eng_grammar_point: "simple present tense")
       @point2 = GrammarPoint.create(language: "Spanish", grammar_point: "pretérito perfecto", eng_grammar_point: "present perfect tense")
-      
+
       @user1 = User.create(id: 1, name: "Alexis", preferred_lang: "Spanish")
-      
+
       @challenge1 = Challenge.create(id: 101, user_id: 1, language: "Spanish", verb: @verb1.verb, eng_verb: @verb1.eng_verb, image_url: "image", image_alt_text: "alt_text")
       @sentence1 = Sentence.create(id: 42, challenge_id: 101, grammar_point: "presente", eng_grammar_point: "simple present tense", user_sent: "Me gusta comer sushi de vez en cuando.",
-        ai_sent: "Me gusta comer sushi de vez en cuando.", ai_explanation: "Correct! You win!")
+                                   ai_sent: "Me gusta comer sushi de vez en cuando.", ai_explanation: "Correct! You win!")
       @sentence2 = Sentence.create(id: 43, challenge_id: 101, grammar_point: "futuro", eng_grammar_point: "simple future tense", user_sent: "Mis hijos no comer platos de fideos.",
-        ai_sent: "Mis hijos no comerán platos de fideos.", ai_explanation: "Here, I added 'án' to 'comer' to correctly conjugate the verb into the future tense.")
+                                   ai_sent: "Mis hijos no comerán platos de fideos.", ai_explanation: "Here, I added 'án' to 'comer' to correctly conjugate the verb into the future tense.")
     end
 
     describe "when successful" do
@@ -156,24 +156,24 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
         expect(parsed_data[:data].keys).to eq([:id, :type, :attributes])
 
         expect(parsed_data[:data][:attributes]).to be_a Hash
-        expect(parsed_data[:data][:attributes].keys).to eq([:language, 
-                                                            :verb, 
-                                                            :eng_verb, 
-                                                            :image_url, 
+        expect(parsed_data[:data][:attributes].keys).to eq([:language,
+                                                            :verb,
+                                                            :eng_verb,
+                                                            :image_url,
                                                             :image_alt_text,
-                                                            :user_id, 
-                                                            :created_at, 
-                                                            :sentences])                                                 
+                                                            :user_id,
+                                                            :created_at,
+                                                            :sentences])
         expect(parsed_data[:data][:attributes][:user_id]).to be_a String
 
         expect(parsed_data[:data][:attributes][:sentences]).to be_an Array
         expect(parsed_data[:data][:attributes][:sentences][0]).to be_a Hash
 
         expect(parsed_data[:data][:attributes][:sentences][0].keys).to eq([:id,
-                                                                           :grammar_point, 
+                                                                           :grammar_point,
                                                                            :eng_grammar_point,
-                                                                           :user_sent, 
-                                                                           :ai_sent, 
+                                                                           :user_sent,
+                                                                           :ai_sent,
                                                                            :ai_explanation])
         expect(parsed_data[:data][:attributes][:sentences][0][:id]).to be_a String
       end

@@ -68,8 +68,8 @@ RSpec.describe "Users API", type: :request do
         expect(parsed_data).to have_key(:data)
         expect(parsed_data[:data]).to be_a(Hash)
         expect(parsed_data[:data].keys).to eq([:id,
-                                              :type,
-                                              :attributes])
+                                               :type,
+                                               :attributes])
         expect(parsed_data[:data][:id]).to eq(@user1.id.to_s)
         expect(parsed_data[:data][:id]).to be_a(String)
         expect(parsed_data[:data][:type]).to be_a(String)

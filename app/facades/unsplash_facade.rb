@@ -25,7 +25,8 @@ class UnsplashFacade
       grammar_points: grammar_points_hash(grams)
     }
     Prompt.new(info)
-    require 'pry'; binding.pry
+    require 'pry'
+    binding.pry
   end
 
   def random_image_and_text
