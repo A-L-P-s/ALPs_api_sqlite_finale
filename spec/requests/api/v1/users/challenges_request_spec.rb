@@ -68,7 +68,6 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
 
         expect(response).to be_successful
         parsed_data = JSON.parse(response.body, symbolize_names: true)
-
         expect(parsed_data).to be_a Hash
         expect(parsed_data.keys).to eq([:data])
 
@@ -76,11 +75,12 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
         expect(parsed_data[:data].keys).to eq([:id, :type])
 
         expect(parsed_data[:data]).to_not have_key(:attributes)
+        expect(Challenge.all.size).to eq(1)
       end
     end
 
     describe "when NOT successful" do
-      it 'returns a 404 where user does not exist' do
+      it 'returns a 404 when user does not exist' do
         challenge_params = {
           "language": "Turkish",
           "verb": "(i) gitmek",
@@ -120,6 +120,34 @@ RSpec.describe "Api::V1::Users::Challenges", :vcr, type: :request do
 
         expect(parsed_data[:errors].first[:detail]).to be_a String
         expect(parsed_data[:errors].first[:detail]).to eq("Couldn't find User with 'id'=76767676")
+      end
+
+      it " will not save the challenge to the database if #create is usucsessful" do
+        challenge_params = {
+          "language": "Turkish",
+          "verb": "(i) gitmek",
+          "eng_verb": "to go",
+          "image_url": "/random/unplash/image.url",
+          "image_alt_text": "Plane flying over the Bosphorous",
+          "sentences": [
+            {
+              "grammar_point": "şimdiki zaman (-iyor)",
+              "eng_grammar_point": "present/present continuous tense",
+              "user_sent": "Bu yaz Hopa'ya gidiyorum."
+            },
+            {
+              "grammar_point": "geniş zaman (-ir/-er)",
+              "eng_grammar_point": "simple present tense",
+              "user_sent": "Her yillar biz Ankara'ya giderim."
+            }
+          ]
+        }
+
+        headers = { 'CONTENT_TYPE' => 'application/json' }
+        post "/api/v1/users/76767676/challenges", headers: headers, params: JSON.generate(challenge_params)
+
+        expect(response.status).to eq(404)
+        expect(Challenge.all.size).to eq(0)
       end
     end
   end
