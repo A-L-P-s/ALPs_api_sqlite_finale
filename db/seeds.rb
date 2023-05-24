@@ -58,7 +58,7 @@ Sentence.create(id: 45, challenge_id: 102, grammar_point: "subjuntivo pasado", e
                 ai_explanation: "Here, I added 'ado' to 'necesitar' to properly conjugate the verb in the past perfect subjunctive, translating to 'If I had needed help...'.")
 
 Challenge.create(id: 103, user_id: 1, language: "Spanish", verb: "retrasar", eng_verb: "to postpone",
-                image_url: "https://images.unsplash.com/photo-1683567935687-2e22ca8c9805?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1767&q=80", image_alt_text: "walking at dusk in the mountains")
+                 image_url: "https://images.unsplash.com/photo-1683567935687-2e22ca8c9805?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1767&q=80", image_alt_text: "walking at dusk in the mountains")
 Sentence.create(id: 46, challenge_id: 103, grammar_point: "imperativo", eng_grammar_point: "imperative", user_sent: "Tu cena y disfruta del paisaje.", ai_sent: "Tu cena y disfruta del paisaje.",
                 ai_explanation: "Good job my young padawan.")
 Sentence.create(id: 47, challenge_id: 103, grammar_point: "pretérito indefinido", eng_grammar_point: "simple past tense", user_sent: "Retrasa su cena y disfrutó del paisaje.",
@@ -106,7 +106,7 @@ Sentence.create(id: 12, challenge_id: 51, grammar_point: "belirsiz geçmiş zama
                 user_sent: "Hindistan'ı ziyaret ettiği için, bir fili binmeyi bilmiş.", ai_sent: "Hindistan'ı ziyaret ettiği için, bir filin üzerine binmeyi öğrendi.",
                 ai_explanation: "Here, I changed 'bir filin binmeyı öğrendi' to 'bir filin üzerine binmeyi öğrendi'. The original phrase would literally mean 'he learned an elephant's riding', which is incorrect. The corrected phrase 'bir filin üzerine binmeyi öğrendi' translates to 'he learned to ride on an elephant', which is grammatically correct and conveys the intended meaning.")
 Sentence.create(id: 13, challenge_id: 51, grammar_point: "zarf fiili (erek/arak)", eng_grammar_point: "adverbial participle",
-                user_sent: "Filleri çok şey bilerek, hayvanat bahçesin işini alabildim.", ai_sent: "Filler hakkında çok şey bilerek, hayvanat bahçesinde işi alabildim.", 
+                user_sent: "Filleri çok şey bilerek, hayvanat bahçesin işini alabildim.", ai_sent: "Filler hakkında çok şey bilerek, hayvanat bahçesinde işi alabildim.",
                 ai_explanation: "In the original Turkish sentence, I added 'hakkında' after 'Filler' to clarify that it means 'knowing a lot about elephants'. Also, I changed 'hayvanat bahçesin' to 'hayvanat bahçesinde' and 'işini alabildim' to 'işi alabildim' to correct the meaning to 'I could get a job at the zoo'.")
 
 Challenge.create(id: 52, user_id: 55, language: "Turkish", verb: "(e/a) aldırmamak", eng_verb: "to ignore",
@@ -148,15 +148,15 @@ GrammarPoint.create(language: "Vietnamese", grammar_point: "nếu", eng_grammar_
 User.create(id: 10, name: "Hai", preferred_lang: "Vietnamese")
 
 Challenge.create(id: 200, user_id: 10, language: "Vietnamese", verb: "Ăn", eng_verb: "to eat",
-  image_url: "https://images.unsplash.com/photo-1682865990641-d897fe51f887?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NDgxNjV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODQ4ODEyMDV8&ixlib=rb-4.0.3&q=80&w=1080", image_alt_text: "a building that has a lot of lights on it")
+                 image_url: "https://images.unsplash.com/photo-1682865990641-d897fe51f887?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NDgxNjV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODQ4ODEyMDV8&ixlib=rb-4.0.3&q=80&w=1080", image_alt_text: "a building that has a lot of lights on it")
 Sentence.create(id: 50, challenge_id: 200, grammar_point: "rất", eng_grammar_point: "adjective intensifiers", user_sent: "Tôi ăn rất nhiều.",
- ai_sent: "Tôi ăn rất nhiều.", ai_explanation: "This sentence is correct. Nice work rockstar!")
+                ai_sent: "Tôi ăn rất nhiều.", ai_explanation: "This sentence is correct. Nice work rockstar!")
 Sentence.create(id: 51, challenge_id: 200, grammar_point: "đang", eng_grammar_point: "present tense", user_sent: "Tôi đang ăn roi.",
- ai_sent: "Tôi đang ăn cơm.", ai_explanation: "The word 'roi' does not have a clear meaning in this context, and it doesn't fit grammatically in the sentence.")
+                ai_sent: "Tôi đang ăn cơm.", ai_explanation: "The word 'roi' does not have a clear meaning in this context, and it doesn't fit grammatically in the sentence.")
 
 Challenge.create(id: 201, user_id: 10, language: "Vietnamese", verb: "học", eng_verb: "to study",
-  image_url: "https://images.unsplash.com/photo-1682621034494-2242e054972c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NDgxNjV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODQ4ODE5NDB8&ixlib=rb-4.0.3&q=80&w=1080", image_alt_text: "a fire burning in the middle of a blue sky")
+                 image_url: "https://images.unsplash.com/photo-1682621034494-2242e054972c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NDgxNjV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODQ4ODE5NDB8&ixlib=rb-4.0.3&q=80&w=1080", image_alt_text: "a fire burning in the middle of a blue sky")
 Sentence.create(id: 52, challenge_id: 201, grammar_point: "đã", eng_grammar_point: "past present tense", user_sent: "Tôi đã học tiếng Anh được 3 năm.",
- ai_sent: "Tôi đã học tiếng Anh được 3 năm.", ai_explanation: "Correct! You win!")
+                ai_sent: "Tôi đã học tiếng Anh được 3 năm.", ai_explanation: "Correct! You win!")
 Sentence.create(id: 53, challenge_id: 201, grammar_point: "nếu", eng_grammar_point: "conditional", user_sent: "Tôi sẽ học lập trình nếu mẹ cho không phép.",
- ai_sent: "Tôi sẽ học lập trình nếu mẹ cho phép.", ai_explanation: "If you want to say 'I will study coding if my mom lets me' in Vietnamese, you can use the following sentence: 'Tôi sẽ học lập trình nếu mẹ cho phép.'")
+                ai_sent: "Tôi sẽ học lập trình nếu mẹ cho phép.", ai_explanation: "If you want to say 'I will study coding if my mom lets me' in Vietnamese, you can use the following sentence: 'Tôi sẽ học lập trình nếu mẹ cho phép.'")
