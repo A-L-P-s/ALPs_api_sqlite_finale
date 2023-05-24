@@ -35,6 +35,7 @@ class Api::V1::Users::ChallengesController < ApplicationController
   def check_challenge
     @challenge = Challenge.find_by(user_id: params[:user_id], id: params[:id])
     return unless @challenge.nil?
+
     cant_delete_challenge
   end
 end
