@@ -116,7 +116,7 @@ If you'd like to demo this API on your local machine:
 1. Ensure you have the prerequisites
 1. Sign up for external API Keys
 1. Clone this repo: `git clone git@github.com:A-L-P-s/ALPs_api_sqlite_finale.git`
-1. Navigate to the root folder: `cd ALPs_api`
+1. Navigate to the root folder: `cd ALPs_api_sqlite_finale`
 1. Run: `bundle install`
 1. Run: `rails db:{create,migrate,seed}`
 1. Run: `bundle exec figaro install`
