@@ -10,12 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_230_518_070_358) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
+ActiveRecord::Schema[7.0].define(version: 2023_05_18_070358) do
   create_table "challenges", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.integer "user_id", null: false
     t.string "language"
     t.string "verb"
     t.string "eng_verb"
@@ -35,7 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 20_230_518_070_358) do
   end
 
   create_table "sentences", force: :cascade do |t|
-    t.bigint "challenge_id", null: false
+    t.integer "challenge_id", null: false
     t.string "grammar_point"
     t.string "eng_grammar_point"
     t.string "user_sent"
