@@ -16,7 +16,7 @@ http_interactions:
         explanation2."}],"temperature":0.7,"max_tokens":600}'
     headers:
       User-Agent:
-      - Faraday v2.7.4
+      - Faraday v2.7.5
       Content-Type:
       - application/json
       Authorization:
@@ -31,7 +31,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 19 May 2023 20:12:58 GMT
+      - Thu, 25 May 2023 19:46:39 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -45,38 +45,38 @@ http_interactions:
       Openai-Model:
       - gpt-3.5-turbo-0301
       Openai-Organization:
-      - user-qkbeb83nq2fbfkoomtctopra
+      - user-qevwwrxhbj9zc0sjo1vddlts
       Openai-Processing-Ms:
-      - '11534'
+      - '5616'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
       - max-age=15724800; includeSubDomains
       X-Ratelimit-Limit-Requests:
-      - '3500'
+      - '3'
       X-Ratelimit-Limit-Tokens:
-      - '90000'
+      - '40000'
       X-Ratelimit-Remaining-Requests:
-      - '3499'
+      - '2'
       X-Ratelimit-Remaining-Tokens:
-      - '89258'
+      - '39258'
       X-Ratelimit-Reset-Requests:
-      - 17ms
+      - 20s
       X-Ratelimit-Reset-Tokens:
-      - 494ms
+      - 1.113s
       X-Request-Id:
-      - df7d7dc9e1a9582cc2a6109d48d47746
+      - f9d012718f221868cda01c98ff17b7d0
       Cf-Cache-Status:
       - DYNAMIC
       Server:
       - cloudflare
       Cf-Ray:
-      - 7c9eff277ea42c95-ORD
+      - 7cd04902ba491f52-DEN
       Alt-Svc:
       - h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJpZCI6ImNoYXRjbXBsLTdJMGt3QTBMTEhNWDhTdlZwbUN3WkI5ME5UZkdUIiwib2JqZWN0IjoiY2hhdC5jb21wbGV0aW9uIiwiY3JlYXRlZCI6MTY4NDUyNzE2NiwibW9kZWwiOiJncHQtMy41LXR1cmJvLTAzMDEiLCJ1c2FnZSI6eyJwcm9tcHRfdG9rZW5zIjoxNTcsImNvbXBsZXRpb25fdG9rZW5zIjoxNDIsInRvdGFsX3Rva2VucyI6Mjk5fSwiY2hvaWNlcyI6W3sibWVzc2FnZSI6eyJyb2xlIjoiYXNzaXN0YW50IiwiY29udGVudCI6IntcbiAgICBcImNvcnJlY3Rpb24xXCI6IFwiWWFyxLFuIGFubmVtIGJlbmkgaGF2YWxpbWFuxLFuYSBnaXRtZWsgacOnaW4gYXJhYmEga3VsbGFuYWNhay5cIixcbiAgICBcImV4cGxhbmF0aW9uMVwiOiBcIkNoYW5nZWQgJ2LEsXJha21hayBpw6dpbicgdG8gJ2dpdG1layBpw6dpbicgdG8gdXNlIHRoZSBmdXR1cmUgdGVuc2UgKC1lY2VrKS5cIixcbiAgICBcImNvcnJlY3Rpb24yXCI6IFwiRMO8biBoYXZhbGltYW7EsW5hIGdpdHRpayBhbWEgYXJrYWRhxZ/EsW3EsW4gdcOnYcSfxLEgZ2VsbWVkaS5cIixcbiAgICBcImV4cGxhbmF0aW9uMlwiOiBcIkFkZGVkIHRoZSBwb3NzZXNzaXZlIHN1ZmZpeCAnLcSxbicgdG8gJ2Fya2FkYcWfxLFtJyBhbmQgY2hhbmdlZCAndcOnYWsgZ2VsbWVkaScgdG8gJ3XDp2HEn8SxIGdlbG1lZGknIHRvIHVzZSB0aGUgbmVnYXRpdmUgcGFzdCB0ZW5zZSAoLW1lLy1tYSArIGRpLy10aSkuXCJcbn0ifSwiZmluaXNoX3JlYXNvbiI6InN0b3AiLCJpbmRleCI6MH1dfQo=
-  recorded_at: Fri, 19 May 2023 20:12:58 GMT
+        eyJpZCI6ImNoYXRjbXBsLTdLQkNzZXJJaHNRU2xnbFBxMG5DTUVLczBRN1hSIiwib2JqZWN0IjoiY2hhdC5jb21wbGV0aW9uIiwiY3JlYXRlZCI6MTY4NTA0Mzk5NCwibW9kZWwiOiJncHQtMy41LXR1cmJvLTAzMDEiLCJ1c2FnZSI6eyJwcm9tcHRfdG9rZW5zIjoxNTcsImNvbXBsZXRpb25fdG9rZW5zIjoxNTUsInRvdGFsX3Rva2VucyI6MzEyfSwiY2hvaWNlcyI6W3sibWVzc2FnZSI6eyJyb2xlIjoiYXNzaXN0YW50IiwiY29udGVudCI6IntcbiAgXCJjb3JyZWN0aW9uMVwiOiBcIllhcsSxbiBhbm5lbSBiZW5pIGhhdmFsaW1hbsSxbmEgZ8O2dMO8cmVjZWsuXCIsXG4gIFwiZXhwbGFuYXRpb24xXCI6IFwiQ2hhbmdlZCAnYsSxcmFrbWFrIGnDp2luJyB0byAnZ8O2dMO8cmVjZWsnLCB3aGljaCBpcyB0aGUgY29ycmVjdCBmb3JtIG9mIGdlbGVjZWsgemFtYW4gZm9yIHRoZSB2ZXJiICdnaXRtZWsnLlwiLFxuICBcImNvcnJlY3Rpb24yXCI6IFwiRMO8biBoYXZhbGltYW7EsW5hIGdpdHRpayBhbWEgYXJrYWRhxZ/EsW3EsW4gdcOnYcSfxLEgZ2VsbWVkaS5cIixcbiAgXCJleHBsYW5hdGlvbjJcIjogXCJDaGFuZ2VkICd1w6dhayBnZWxtZWRpJyB0byAnYXJrYWRhxZ/EsW3EsW4gdcOnYcSfxLEgZ2VsbWVkaScsIGFuZCBhZGRlZCAnLcSxbicgc3VmZml4IHRvIHNob3cgcG9zc2Vzc2lvbi4gQWxzbyBjaGFuZ2VkIHRoZSB2ZXJiIGZvcm0gdG8gb2x1bXN1eiBnZcOnbWnFnyB6YW1hbiAoLW1lLy1tYSArIGRpLy10aSkuXCJcbn0ifSwiZmluaXNoX3JlYXNvbiI6InN0b3AiLCJpbmRleCI6MH1dfQo=
+  recorded_at: Thu, 25 May 2023 19:46:39 GMT
 recorded_with: VCR 6.1.0
