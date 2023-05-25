@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/A-L-P-s/ALPs_api">
-    <img src=".github/ALPs_logo_v2.jpg" alt="Logo" width="350">
+    <img src=".github/logo_final_alps.jpg" alt="Logo" width="350">
   </a>
  
 <!-- <h2 align="center"></h2> -->
@@ -15,8 +15,19 @@
       <hr><br>
       Now that you've "climbed the mountain" of learning another language, keep your skills fresh with regular practice! Language output (speaking & writing) is key but can get dull with routine drills, plus you may never know if it's entirely correct. <br><span>🔸</span><br> With ALPs, every writing challenge comes with an inspiring image to ignite your imagination, a random verb & grammar points to help focus your language, and immediate feedback with the help of AI!
     </p><br>
+    <a href="https://a-l-p-s.github.io/alps-ui/">Visit the ALPs website!</a>
 </div>
 <hr>
+
+<br>
+
+<div align="center">
+
+![Video Presentation](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWJjY2JlNTgxYWQzYzE5NzkyNTQ0YTgwZmUzYWU1ZGFhMGNlMWRkMyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/MxWCnzsPZWuvaQ3FGw/giphy.gif)
+</div>
+<br>
+
+---
 
 <!-- TABLE OF CONTENTS -->
 ### Table of Contents
@@ -49,14 +60,12 @@
 <!-- ABOUT THE PROJECT -->
 <h2 id="about-the-project">About the Project</h2>
 
-<span>🔸</span> [Production Website] (add link here)
+<span>🔸</span> [Deployed Site](https://a-l-p-s.github.io/alps-ui/)
 <br>
 <span>🔸</span> [Backend Service](https://git.heroku.com/calm-thicket-75558.git)
 <br>
 <span>🔸</span> [Front End Repository](https://github.com/A-L-P-s/alps-ui)
 <br>
-
-[Video Presentation] (EMBED VIDEO HERE)
 
 **ALPs** was created by a cross-functional development team of students from the Turing School of Software and Design as their [capstone project](https://mod4.turing.edu/projects/capstone/).
 
@@ -90,15 +99,13 @@ The `agile methodology` was chosen for backend development to expedite the app's
 
 <br>
 
-#### `Phase 2:` Refactored Deployment
-- Replaced: ![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white) With: ![AmazonAWS](https://img.shields.io/badge/AWS_Elastic_Beanstalk-7BB661?style=for-the-badge&logo=amazonaws&logoColor=white)
+#### `Phase 2:` First Attempt to Refactor Deployment
+- Aimed to Replace: ![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white) With: ![AWS-Beanstalk](https://img.shields.io/badge/AWS_Elastic_Beanstalk-7BB661?style=for-the-badge&logo=amazonaws&logoColor=white) ![AWS-RDS](https://img.shields.io/badge/Amazon%20RDS-527FFF.svg?style=for-the-badge&logo=Amazon-RDS&logoColor=white)
 
 <br>
 
-#### `Phase 3:` Abstracted Functionality with Additional Stretch Technologies
-![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
-![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green)
-![Twilio/SendGrid](https://img.shields.io/badge/Twilio/Sendgrid-F22F46?style=for-the-badge&logo=Twilio&logoColor=white)
+#### `Phase 3:` Successfully Refactored Deployment
+- Replaced: ![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white) With: ![AWS-EC2](https://img.shields.io/badge/Amazon%20EC2-FF9900.svg?style=for-the-badge&logo=Amazon-EC2&logoColor=white) ![AWS-EC2](https://img.shields.io/badge/AWS%20Elastic%20IPs-5C0D34.svg?style=for-the-badge&logo=Amazon-EC2&logoColor=white)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -108,7 +115,7 @@ The `agile methodology` was chosen for backend development to expedite the app's
 If you'd like to demo this API on your local machine:
 1. Ensure you have the prerequisites
 1. Sign up for external API Keys
-1. Clone this repo: `git clone git@github.com:A-L-P-s/ALPs_api.git`
+1. Clone this repo: `git clone git@github.com:A-L-P-s/ALPs_api_sqlite_finale.git`
 1. Navigate to the root folder: `cd ALPs_api`
 1. Run: `bundle install`
 1. Run: `rails db:{create,migrate,seed}`
@@ -145,11 +152,7 @@ Sign up for your individual external API keys:
 
 <!-- Schema -->
 ### Schema
-#### Phase 1:
 <img src=".github/phase_1_schema.jpg" alt="Schema" width="100%">
-
-#### Phase 2:
-[Add second image] (when schema changes to microservices)
 
 <br>
 
@@ -218,18 +221,16 @@ Happy path, sad path, and edge case testing were considered and tested. When a r
     "type": “user",
     "attributes": {
         "name": "Deniz",
-        "preferred_lang": "Turkish",
-        "challenges": null (or [])
+        "preferred_lang": "Turkish"
     }},
-    {
+   {
     "id": "1",
     "type": “user",
     "attributes": {
         "name": "Alexis",
-        "preferred_lang": "Spanish",
-        "challenges": null (or [])
+        "preferred_lang": "Spanish"
       }
-  }]
+   }]
 }
   </code></pre> 
 </details>
@@ -259,7 +260,7 @@ Happy path, sad path, and edge case testing were considered and tested. When a r
               "eng_verb": "to go", 
               "image_url": "/random/unplash/image.url",
               "image_alt_text": "Plane flying over the Bosphorous", 
-              "created_at": "05-30-2023"
+              "created_at": "05/30/2023"
             }, 
             { ...etc...}
         ]
@@ -279,25 +280,27 @@ Happy path, sad path, and edge case testing were considered and tested. When a r
 
   <pre>
     <code>
-{
+
   "data": {
     "id": null,
-    "type": “challenge",
+    "type": “prompt",
     "attributes": {
+        "user_id": = "55",
         "language": "Turkish", 
-        "verb": "(i) gitmek"
-        "eng_verb": "to go" 
-        "image_url": "/random/unplash/image.url"
-        "image_alt_text": "Plane flying over the Bosphorous" 
-        "created_at": null
+        "verb": "(i) gitmek",
+        "eng_verb": "to go",
+        "image_url": "/random/unplash/image.url",
+        "image_alt_text": "Plane flying over the Bosphorous",
         "grammar_points": [
            {
-            "grammar_point": "geçmiş zaman"
-            "eng_grammar_point": "past simple"
+            "grammar_point": "şimdiki zaman (-iyor)",
+            "eng_grammar_point": "present/present continuous tense"
            },
-           { ...etc...}
+           {
+            "grammar_point": "geniş zaman (-ir/-er)",
+            "eng_grammar_point": "simple present tense"
+            }
         ]
-        "sentences": null
      }  
    }
 }
@@ -317,14 +320,14 @@ Happy path, sad path, and edge case testing were considered and tested. When a r
  "image_alt_text": "Plane flying over the Bosphorous", 
  "sentences": [
    {
-    "grammar_point": "geçmiş zaman",
-    "eng_grammar_point": "past tense",
-    "user_sent": "Dün havalimana gittik ama arkadaşım uçak gelmedi."
+    "grammar_point": "şimdiki zaman (-iyor)",
+    "eng_grammar_point": "present/present continuous tense",
+    "user_sent": "Bu yaz Hopa'ya gidiyorum." --> correct sentence <--
     },
     {
-      "grammar_point": "geniş zaman",
-      "eng_grammar_point": "future tense",
-      "user_sent": "Dün havalimana gittik ama arkadaşım uçak gelmeyecek."
+      "grammar_point": "geniş zaman (-ir/-er)",
+      "eng_grammar_point": "simple present tense",
+      "user_sent": "Biz her yillar biz Fethiye'ye giderim." --> incorrect sentence <--
     }
   ]
 }
@@ -339,29 +342,10 @@ Happy path, sad path, and edge case testing were considered and tested. When a r
 
   <pre>
     <code>
-  {
+{
   "data": {
     "id": “1”,
-    "type": “challenge",
-    "attributes": {
-        "language": "Turkish", 
-        "verb": "(i) gitmek",
-        "eng_verb": "to go", 
-        "image_url": "/random/unplash/image.url",
-        "image_alt_text": "Plane flying over the Bosphorous", 
-        "created_at": "05-30-2023",
-        "grammar_points": null,
-        "sentences": [
-          {
-           "sent_id": "1",
-           "grammar_point": "geçmiş zaman",
-           "eng_grammar_point": "past tense",
-           "user_sent": "Dün havalimana gittik ama arkadaşım uçak gelmedi.",
-           "ai_sent": "Dün havalimanına gittik, ancak arkadaşımızın uçağı gelmedi."
-           }, 
-           { ...etc...}     
-         ]
-     }  
+    "type": “challenge"
    }
 }
     </code></pre>
@@ -382,22 +366,31 @@ Happy path, sad path, and edge case testing were considered and tested. When a r
     "id": “1”,
     "type": “challenge",
     "attributes": {
+        "user_id": = "55",
         "language": "Turkish", 
         "verb": "(i) gitmek",
         "eng_verb": "to go", 
         "image_url": "/random/unplash/image.url",
         "image_alt_text": "Plane flying over the Bosphorous", 
-        "created_at": "05-30-2023",
+        "created_at": "05/30/2023",
         "grammar_points": null,
         "sentences": [
           {
-           "sent_id": "1",
-           "grammar_point": "geçmiş zaman",
-           "eng_grammar_point": "past tense",
-           "user_sent": "Dün havalimana gittik ama arkadaşım uçak gelmedi.",
-           "ai_sent": "Dün havalimanına gittik, ancak arkadaşımızın uçağı gelmedi."
+           "id": "1",
+           "grammar_point": "şimdiki zaman (-iyor)",
+           "eng_grammar_point": "present/present continuous tense",
+           "user_sent": "Bu yaz Hopa'ya gidiyorum.",  
+           "ai_sent": "Bu yaz Hopa'ya gidiyorum.",
+           "ai_explanation": "The sentence uses the correct grammar."
            }, 
-           { ...etc...}     
+           {
+           "id": "2",
+           "grammar_point": "geniş zaman (-ir/-er)",
+           "eng_grammar_point": "simple present tense",
+           "user_sent": "Biz her yillar biz Fethiye'ye giderim.", 
+           "ai_sent": "Biz her yillar biz Fethiye'ye giderim.",
+           "ai_explanation": "The word 'yillar' should be 'yıl' and the verb ending must match 'biz' (we)."
+           }
          ]
      }  
    }
@@ -437,26 +430,13 @@ View these endpoints in [Postman] (add link here)
 <h2 id="technologies">Stretch Technologies</h2>
 
 <!-- AWS -->
-<img src= "https://logos-world.net/wp-content/uploads/2021/08/Amazon-Web-Services-AWS-Logo.png" style="width:60px; height:40px;"><a href="https://aws.amazon.com/"><strong> Elastic Beanstock Deployment</strong></a>
+<img src= "https://logos-world.net/wp-content/uploads/2021/08/Amazon-Web-Services-AWS-Logo.png" style="width:60px; height:40px;"><a href="https://aws.amazon.com/"> ![AWS-Beanstalk](https://img.shields.io/badge/AWS_Elastic_Beanstalk-7BB661?style=for-the-badge&logo=amazonaws&logoColor=white) ![AWS-RDS](https://img.shields.io/badge/Amazon%20RDS-527FFF.svg?style=for-the-badge&logo=Amazon-RDS&logoColor=white) </a>
 
-<p>- Phase 2: Amazon Web Services was used to deploy the application.</p><br>
+<p>- Phase 2: Attempted to redeploy the Rails app with a PostgreSQL database, using AWS Elastic Beanstalk and an RDS.</p><br>
 
-<!-- Python -->
-<img src=".github/logo_python.jpg" height="30"><a href="https://www.python.org/"><strong> Python Programming Language</strong></a>
+<img src= "https://logos-world.net/wp-content/uploads/2021/08/Amazon-Web-Services-AWS-Logo.png" style="width:60px; height:40px;"><a href="https://aws.amazon.com/"> ![AWS-EC2](https://img.shields.io/badge/Amazon%20EC2-FF9900.svg?style=for-the-badge&logo=Amazon-EC2&logoColor=white) ![AWS-EC2](https://img.shields.io/badge/AWS%20Elastic%20IPs-5C0D34.svg?style=for-the-badge&logo=Amazon-EC2&logoColor=white) </a>
 
-<p>- Phase 3: Used as the programming language to build microservices.</p><br>
-
-<!-- Django -->
-<img src=".github/logo_django.jpg" height="30"><a href="https://www.djangoproject.com/"><strong> Django Web Framework</strong></a>
-
-<p>- Phase 3: Used as the web framework to build microservices.</p><br>
-
-<!-- Twilio / Sendgrid -->
-<img src=".github/logo_twilio_sendgrid.jpg" height="28"><a href="https://sendgrid.com/"><strong> Twilio/Sendgrid Email Service</strong></a>
-
-<p>- Phase 3: Used to allow users to email themselves a copy of their completed challenge.</p>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p>- Phase 3: Successfully redeployed app after changing the database to a SQLite3 database, using an AWS EC2 instance and Elastic IPs.</p><br>
 
 <!-- Future Iterations -->
 <h2 id="refactor">Future Iterations</h2>
@@ -466,11 +446,15 @@ View these endpoints in [Postman] (add link here)
   <dl>
     <dt><span>🔸</span> Add authorization & authentication</dt>
       <dd>- Allow users to create own profile and dashboard</dd>
-    <dt><span>🔸</span> Expand AI functionality</dt>
-      <dd>- Add questions/quizes created by AI for language topics</dd>
-      <dd>- Create and save flashcards</dd>
-    <dt><span>🔸</span> Create administrative role</dt>
+      <dd>- Paid version to offer users individual OpenAI API key</dd>
+    <dt><span>🔸</span> Create administrative roles</dt>
       <dd>- Track statistics of all users and languages</dd>
+    <dt><span>🔸</span> Create microservices</dt>
+      <dd>- For additional API calls, language exercises, nad futher abstraction of code</dd>
+    <dt><span>🔸</span> Expand AI functionality</dt>
+      <dd>- Allow users to edit their first challenge attempt</dd>
+      <dd>- Add multiple queries that checked for which language was written & which part of a sentence in incorrect </dd>
+      <dd>- Include machine learning so AI can remember a user and can track commonly made errors</dd>
   </dl>
 </details>
 
@@ -480,14 +464,6 @@ View these endpoints in [Postman] (add link here)
 
 <br>
 
-| [<img alt="Kirk Hauck" width="100" src=".github/kirk.jpg"/>](https://www.linkedin.com/in/kirk-hauck/) | [<img alt="Bea Ordonez" width="100" src=".github/bea.jpg"/>](https://www.linkedin.com/in/bea-ordonez/) | [<img alt="Katherine Blaine" width="100" src=".github/Katherine.jpg"/>](https://www.linkedin.com/in/katherinekblaine/) | [<img alt="Tyalor Pridgen" width="100" src=".github/taylor.jpg"/>](https://www.linkedin.com/in/taylor-pridgen-a3aa7918/) | [<img alt="Brian Zanti" width="100" src=".github/brian.jpg"/>](https://www.linkedin.com/in/brianzanti/) | 
-| ------------------ | ------------ | -------------- | ----------- | -------------- | 
-| Kirk Hauck | Bea Ordonez | Katherine Blaine | Tyalor Pridgen | Brian Zanti | 
-| FrontEnd | FrontEnd | FrontEnd | Project Mentor | Project Manager |
-| [GitHub](https://github.com/kirkhauck) | [GitHub](https://github.com/bea-ordonez) | [GitHub](https://github.com/KatherineBlaine) | [GitHub](https://github.com/pridgey) | [GitHub](https://github.com/BrianZanti) |
-| [LinkedIn](https://www.linkedin.com/in/kirk-hauck/) |  [LinkedIn](https://www.linkedin.com/in/bea-ordonez/) | [LinkedIn](https://www.linkedin.com/in/katherinekblaine/) | [LinkedIn](https://www.linkedin.com/in/taylor-pridgen-a3aa7918/) | [LinkedIn](https://www.linkedin.com/in/brianzanti/) |
-
-<br>
 
 | [<img alt="Caleb Thomas" width="100" src=".github/caleb.jpg"/>](https://www.linkedin.com/in/calebjthomas/) | [<img alt="James Taylor" width="100" src=".github/james.jpg"/>](https://www.linkedin.com/in/james-taylor-a02a7a199/) | [<img alt="Huy Phan" width="100" src=".github/huy.jpg"/>](https://www.linkedin.com/in/huy-phan-2471b3261/) | [<img alt="David Marino" width="100" src=".github/david.jpg"/>](https://www.linkedin.com/in/davidjmarino8/) | [<img alt="Melony Erin Franchini" width="100" src=".github/mel.jpg"/>](https://www.linkedin.com/in/melony-erin-franchini/) |
 | ------------------ | ------------ | -------------- | ----------- | -------------- | 
@@ -495,5 +471,14 @@ View these endpoints in [Postman] (add link here)
 | BackEnd | BackEnd | BackEnd | BackEnd | BackEnd | 
 | [GitHub](https://github.com/cjthomas00) | [GitHub](https://github.com/JTaylor28) | [GitHub](https://github.com/HuyPhan2025) | [GitHub](https://github.com/davejm8) | [GitHub](https://github.com/MelTravelz) |
 | [LinkedIn](https://www.linkedin.com/in/calebjthomas/) |  [LinkedIn](https://www.linkedin.com/in/james-taylor-a02a7a199/) | [LinkedIn](https://www.linkedin.com/in/huy-phan-2471b3261/) | [LinkedIn](https://www.linkedin.com/in/davidjmarino8/) | [LinkedIn](https://www.linkedin.com/in/melony-erin-franchini/) |
+
+<br>
+
+| [<img alt="Kirk Hauck" width="100" src=".github/kirk.jpg"/>](https://www.linkedin.com/in/kirk-hauck/) | [<img alt="Bea Ordonez" width="100" src=".github/bea.jpg"/>](https://www.linkedin.com/in/bea-ordonez/) | [<img alt="Katherine Blaine" width="100" src=".github/Katherine.jpg"/>](https://www.linkedin.com/in/katherinekblaine/) | [<img alt="Tyalor Pridgen" width="100" src=".github/taylor.jpg"/>](https://www.linkedin.com/in/taylor-pridgen-a3aa7918/) | [<img alt="Brian Zanti" width="100" src=".github/brian.jpg"/>](https://www.linkedin.com/in/brianzanti/) | 
+| ------------------ | ------------ | -------------- | ----------- | -------------- | 
+| Kirk Hauck | Bea Ordonez | Katherine Blaine | Tyalor Pridgen | Brian Zanti | 
+| FrontEnd | FrontEnd | FrontEnd | Project Mentor | Project Manager |
+| [GitHub](https://github.com/kirkhauck) | [GitHub](https://github.com/bea-ordonez) | [GitHub](https://github.com/KatherineBlaine) | [GitHub](https://github.com/pridgey) | [GitHub](https://github.com/BrianZanti) |
+| [LinkedIn](https://www.linkedin.com/in/kirk-hauck/) |  [LinkedIn](https://www.linkedin.com/in/bea-ordonez/) | [LinkedIn](https://www.linkedin.com/in/katherinekblaine/) | [LinkedIn](https://www.linkedin.com/in/taylor-pridgen-a3aa7918/) | [LinkedIn](https://www.linkedin.com/in/brianzanti/) |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
