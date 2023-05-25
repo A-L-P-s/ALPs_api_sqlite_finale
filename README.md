@@ -152,7 +152,10 @@ Sign up for your individual external API keys:
 
 <!-- Schema -->
 ### Schema
-<img src=".github/phase_1_schema.jpg" alt="Schema" width="100%">
+
+<div align="center">
+<img src=".github/ALPs_schema_diagram.png" alt="Schema" width="85%">
+</div>
 
 <br>
 
