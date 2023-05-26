@@ -439,7 +439,7 @@ Happy path, sad path, and edge case testing were considered and tested. When a r
 
 <img src= "https://logos-world.net/wp-content/uploads/2021/08/Amazon-Web-Services-AWS-Logo.png" style="width:60px; height:40px;"><a href="https://aws.amazon.com/"> ![AWS-EC2](https://img.shields.io/badge/Amazon%20EC2-FF9900.svg?style=for-the-badge&logo=Amazon-EC2&logoColor=white) ![AWS-EC2](https://img.shields.io/badge/AWS%20Elastic%20IPs-5C0D34.svg?style=for-the-badge&logo=Amazon-EC2&logoColor=white) </a>
 
-<p>- Phase 3: Successfully redeployed app after changing the database to a SQLite3 database, using an AWS EC2 instance and Elastic IPs.</p><br>
+<p>- Phase 3: Successfully redeployed app after changing database to SQLite3, using an AWS EC2 instance and Elastic IPs.</p><br>
 
 <!-- Future Iterations -->
 <h2 id="refactor">Future Iterations</h2>
