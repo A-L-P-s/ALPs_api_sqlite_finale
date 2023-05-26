@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/A-L-P-s/ALPs_api">
-    <img src=".github/logo_final_alps.jpg" alt="Logo" width="350">
+    <img src=".github/ALPs_logo_v2.jpg" alt="Logo" width="350">
   </a>
  
 <!-- <h2 align="center"></h2> -->
