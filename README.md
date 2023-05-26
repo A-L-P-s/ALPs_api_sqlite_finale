@@ -435,7 +435,7 @@ Happy path, sad path, and edge case testing were considered and tested. When a r
 <!-- AWS -->
 <img src= "https://logos-world.net/wp-content/uploads/2021/08/Amazon-Web-Services-AWS-Logo.png" style="width:60px; height:40px;"><a href="https://aws.amazon.com/"> ![AWS-Beanstalk](https://img.shields.io/badge/AWS_Elastic_Beanstalk-7BB661?style=for-the-badge&logo=amazonaws&logoColor=white) ![AWS-RDS](https://img.shields.io/badge/Amazon%20RDS-527FFF.svg?style=for-the-badge&logo=Amazon-RDS&logoColor=white) </a>
 
-<p>- Phase 2: Attempted to redeploy the Rails app with a PostgreSQL database, using AWS Elastic Beanstalk and an RDS.</p><br>
+<p>- Phase 2: Attempted to redeploy app with a PostgreSQL database, using AWS Elastic Beanstalk and RDS.</p><br>
 
 <img src= "https://logos-world.net/wp-content/uploads/2021/08/Amazon-Web-Services-AWS-Logo.png" style="width:60px; height:40px;"><a href="https://aws.amazon.com/"> ![AWS-EC2](https://img.shields.io/badge/Amazon%20EC2-FF9900.svg?style=for-the-badge&logo=Amazon-EC2&logoColor=white) ![AWS-EC2](https://img.shields.io/badge/AWS%20Elastic%20IPs-5C0D34.svg?style=for-the-badge&logo=Amazon-EC2&logoColor=white) </a>
 
