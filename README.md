@@ -412,7 +412,7 @@ Happy path, sad path, and edge case testing were considered and tested. When a r
   </pre>
 </details><br>
 
-View these endpoints in [Postman] (add link here)
+<!--View these endpoints in [Postman] (add link here) -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
